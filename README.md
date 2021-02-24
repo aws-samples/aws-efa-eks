@@ -1,6 +1,6 @@
+
 # Getting started with EFA on EKS
-
-
+Continuing the repo in aws-samples/eks-efa-examples this repo provides an example using managed nodegroups to instantiate a EKS cluster with GPUDirectRDMA on p4d instances.
 
 
 ## EFA Basics
@@ -704,4 +704,4 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 
 ## License
 
-This project is licensed under the Apache-2.0 License.
+This project is licensed under the MIT-0 License.
