@@ -285,24 +285,28 @@ Resources:
           - Description: NetworkInterfaces Configuration For EFA and EKS
             NetworkCardIndex: 0
             DeviceIndex: 0
+            DeleteOnTermination: true
             Groups:
               - !Ref NodeSecurityGroup
             InterfaceType: efa
           - Description: NetworkInterfaces Configuration For EFA and EKS
             NetworkCardIndex: 1
             DeviceIndex: 1
+            DeleteOnTermination: true
             Groups:
               - !Ref NodeSecurityGroup
             InterfaceType: efa
           - Description: NetworkInterfaces Configuration For EFA and EKS
             NetworkCardIndex: 2
             DeviceIndex: 2
+            DeleteOnTermination: true
             Groups:
               - !Ref NodeSecurityGroup
             InterfaceType: efa
           - Description: NetworkInterfaces Configuration For EFA and EKS
             NetworkCardIndex: 3
             DeviceIndex: 3
+            DeleteOnTermination: true
             Groups:
               - !Ref NodeSecurityGroup
             InterfaceType: efa
