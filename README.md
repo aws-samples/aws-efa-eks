@@ -698,6 +698,12 @@ $ kubectl logs -f nccl-tests-efa-launcher-wzr8j
 ```
 </details>
 
+## (Optional) - Utilizing the 4 ENIs for ENA parallel/multistream TCP traffic
+
+Specifically for the P4d instances its possible through EC2MultiCard to utilize the 4 ENIs for parallel. The P4d instances are capable of 400 (4x100) Gbps network bandwidth. In the `examples/iperf3` a server/client yaml spec has been provided to show how to achieve the full 400 Gbps.
+
+Recall that each TCP flow in Amazon EC2 is limited to 10 Gbps. To achieve the full 400 Gbps we will need to open 10 TCP flows per ENI totalling 40 flows between two nodes.
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
