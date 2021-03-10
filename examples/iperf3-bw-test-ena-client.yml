@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iperf3-client
+spec:
+  hostNetwork: true
+  containers:
+  - name: app
+    image: ubuntu:latest
+    command: ["/bin/bash"]
+    args: ["-c", "apt update && \
+                  apt install iproute2 iperf3 -y && \
+                  ip r && for a in {172.31.122.231:172.31.121.131,172.31.117.195:172.31.111.123,172.31.99.203:172.31.101.179,172.31.124.218:172.31.100.237}; do for i in {5024..5033}; do iperf3 -c ${a%:*} -T s$i -p $i -B ${a#*:} --cport $i -t 60 -R -V & done; done && while true; do sleep 13600; done"]
