@@ -69,7 +69,7 @@ spec:
                       - p4d.24xlarge
       hostNetwork: true
       containers:
-        - image: 602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/aws-efa-k8s-device-plugin:v0.3-linux_amd64
+        - image: 602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/aws-efa-k8s-device-plugin:v0.3.3
           imagePullPolicy: Always
           name: aws-efa-k8s-device-plugin
           securityContext:
