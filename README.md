@@ -21,10 +21,7 @@ This document will introduce the user to create an EKS cluster with `p4d.24xlarg
 Create an empty EKS cluster via `eksctl`, at the moment, `eksctl` doesnt have support to create EFA supported nodegroup. In the later steps, the nodegroup would be created then join the EKS cluster.
 
 ```
-eksctl create cluster --name=${cluster_name} \
- --region=us-west-2 \
- --ssh-access --ssh-public-key ~/.ssh/id_rsa.pub \
- --without-nodegroup
+eksctl create cluster --region us-east-1 --without-nodegroup --vpc-public-subnets ${subnets} 
 ```
 ## Step 2: Create Launch Template, EFA Security Groups and Placement Groups
 
