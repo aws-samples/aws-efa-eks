@@ -10,7 +10,7 @@ spec:
     command: ["/bin/bash"]
     args: ["-c", "apt update && \
                   apt install iproute2 iperf3 -y && \
-                  ip r && for a in {10.0.6.33:10.0.130.39,10.0.52.185:10.0.131.233,10.0.25.175:10.0.130.168,10.0.51.91:10.0.130.116}; do for i in {5024..5033}; do iperf3 -c ${a%:*} -T s$i -p $i -B ${a#*:} --cport $i -t 60 -R -V & done; done && while true; do sleep 13600; done"]
+                  ip r && for a in {10.0.6.33:10.0.130.39,10.0.52.185:10.0.131.233,10.0.25.175:10.0.130.168,10.0.51.91:10.0.130.116}; do for i in {5024..5033}; do iperf3 -c ${a%:*} -T s$i -p $i -B ${a#*:} --cport $i -t 36000 -R -V & done; done && while true; do sleep 13600; done"]
     resources:
       limits:  
         vpc.amazonaws.com/efa: 4
