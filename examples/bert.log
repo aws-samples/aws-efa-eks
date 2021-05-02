@@ -1,0 +1,1901 @@
+/etc/shinit_v2: line 3: sed: command not found
+/etc/shinit_v2: line 3: sed: command not found
+/etc/shinit_v2: line 8: hostname: command not found
+/etc/shinit_v2: line 8: hostname: command not found
++ POD_NAME=bert-large-pretraining-efa-worker-1
++ POD_NAME=bert-large-pretraining-efa-worker-0
++ '[' b = - ']'
++ '[' b = - ']'
++ shift
++ shift
++ /opt/kube/kubectl cp /opt/kube/hosts bert-large-pretraining-efa-worker-0:/etc/hosts_of_nodes
++ /opt/kube/kubectl cp /opt/kube/hosts bert-large-pretraining-efa-worker-1:/etc/hosts_of_nodes
++ /opt/kube/kubectl exec bert-large-pretraining-efa-worker-1 -- /bin/sh -c 'cat /etc/hosts_of_nodes >> /etc/hosts &&        PATH=/opt/amazon/openmpi/bin:$PATH ; export PATH ; LD_LIBRARY_PATH=/opt/amazon/openmpi/lib:$LD_LIBRARY_PATH ; export LD_LIBRARY_PATH ; DYLD_LIBRARY_PATH=/opt/amazon/openmpi/lib:$DYLD_LIBRARY_PATH ; export DYLD_LIBRARY_PATH ;   /opt/amazon/openmpi/bin/orted --daemonize -mca ess "env" -mca ess_base_jobid "676855808" -mca ess_base_vpid 2 -mca ess_base_num_procs "3" -mca orte_node_regex "bert-large-pretraining-efa-launcher-z[1:5]kp9,bert-large-pretraining-efa-worker-[1:0-1]@0(3)" -mca orte_hnp_uri "676855808.0;tcp://172.31.97.160:58289" --mca plm_rsh_no_tree_spawn "1" --mca pml "^cm" -mca plm "rsh" -mca orte_default_hostfile "/etc/mpi/hostfile" -mca plm_rsh_agent "/etc/mpi/kubexec.sh" -mca orte_tag_output "1" -mca hwloc_base_binding_policy "none" -mca rmaps_base_mapping_policy "slot" -mca rmaps_base_oversubscribe "1" -mca pmix "^s1,s2,cray,isolated"'
++ /opt/kube/kubectl exec bert-large-pretraining-efa-worker-0 -- /bin/sh -c 'cat /etc/hosts_of_nodes >> /etc/hosts &&        PATH=/opt/amazon/openmpi/bin:$PATH ; export PATH ; LD_LIBRARY_PATH=/opt/amazon/openmpi/lib:$LD_LIBRARY_PATH ; export LD_LIBRARY_PATH ; DYLD_LIBRARY_PATH=/opt/amazon/openmpi/lib:$DYLD_LIBRARY_PATH ; export DYLD_LIBRARY_PATH ;   /opt/amazon/openmpi/bin/orted --daemonize -mca ess "env" -mca ess_base_jobid "676855808" -mca ess_base_vpid 1 -mca ess_base_num_procs "3" -mca orte_node_regex "bert-large-pretraining-efa-launcher-z[1:5]kp9,bert-large-pretraining-efa-worker-[1:0-1]@0(3)" -mca orte_hnp_uri "676855808.0;tcp://172.31.97.160:58289" --mca plm_rsh_no_tree_spawn "1" --mca pml "^cm" -mca plm "rsh" -mca orte_default_hostfile "/etc/mpi/hostfile" -mca plm_rsh_agent "/etc/mpi/kubexec.sh" -mca orte_tag_output "1" -mca hwloc_base_binding_policy "none" -mca rmaps_base_mapping_policy "slot" -mca rmaps_base_oversubscribe "1" -mca pmix "^s1,s2,cray,isolated"'
+[1,3]<stderr>:2021-05-02 14:33:49.128000: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,4]<stderr>:2021-05-02 14:33:49.136714: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,0]<stderr>:2021-05-02 14:33:49.139296: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,1]<stderr>:2021-05-02 14:33:49.141389: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,2]<stderr>:2021-05-02 14:33:49.141397: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,7]<stderr>:2021-05-02 14:33:49.141394: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,5]<stderr>:2021-05-02 14:33:49.141387: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,6]<stderr>:2021-05-02 14:33:49.141392: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,3]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,8]<stderr>:2021-05-02 14:33:49.169870: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,11]<stderr>:2021-05-02 14:33:49.169871: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,12]<stderr>:2021-05-02 14:33:49.169870: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,15]<stderr>:2021-05-02 14:33:49.171554: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,4]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,0]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,14]<stderr>:2021-05-02 14:33:49.178172: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,2]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,6]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,7]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,5]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,1]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,13]<stderr>:2021-05-02 14:33:49.186290: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,10]<stderr>:2021-05-02 14:33:49.186617: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,9]<stderr>:2021-05-02 14:33:49.206153: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,12]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,8]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,11]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,15]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,14]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,10]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,13]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,9]<stderr>:WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[1,4]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,0]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,0]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,4]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,2]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,7]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,5]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,7]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,2]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,5]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,3]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,3]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,6]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,6]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,1]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,1]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,10]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,8]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,11]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,10]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,8]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,11]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,14]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,15]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,13]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,14]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,15]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,12]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,13]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,12]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,9]<stderr>:/etc/shinit_v2: line 3: sed: command not found
+[1,9]<stderr>:/etc/shinit_v2: line 8: hostname: command not found
+[1,2]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,2]<stderr>:
+[1,2]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,2]<stderr>:
+[1,0]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,0]<stderr>:
+[1,0]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,0]<stderr>:
+[1,4]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,4]<stderr>:
+[1,4]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,4]<stderr>:
+[1,7]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,7]<stderr>:
+[1,7]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,7]<stderr>:
+[1,0]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,0]<stdout>:         This warning message will be removed when the underlying
+[1,0]<stdout>:         issues have been fixed and you are running a TF version
+[1,0]<stdout>:         that has that fix.
+[1,2]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,2]<stdout>:         This warning message will be removed when the underlying
+[1,2]<stdout>:         issues have been fixed and you are running a TF version
+[1,2]<stdout>:         that has that fix.
+[1,4]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,4]<stdout>:         This warning message will be removed when the underlying
+[1,4]<stdout>:         issues have been fixed and you are running a TF version
+[1,4]<stdout>:         that has that fix.
+[1,7]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,7]<stdout>:         This warning message will be removed when the underlying
+[1,7]<stdout>:         issues have been fixed and you are running a TF version
+[1,7]<stdout>:         that has that fix.
+[1,6]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,6]<stderr>:
+[1,6]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,6]<stderr>:
+[1,6]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,6]<stdout>:         This warning message will be removed when the underlying
+[1,6]<stdout>:         issues have been fixed and you are running a TF version
+[1,6]<stdout>:         that has that fix.
+[1,3]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,3]<stderr>:
+[1,3]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,3]<stderr>:
+[1,3]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,3]<stdout>:         This warning message will be removed when the underlying
+[1,3]<stdout>:         issues have been fixed and you are running a TF version
+[1,3]<stdout>:         that has that fix.
+[1,8]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,8]<stderr>:
+[1,9]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,9]<stderr>:
+[1,8]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,8]<stderr>:
+[1,9]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,9]<stderr>:
+[1,10]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,10]<stderr>:
+[1,10]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,10]<stderr>:
+[1,8]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,8]<stdout>:         This warning message will be removed when the underlying
+[1,8]<stdout>:         issues have been fixed and you are running a TF version
+[1,8]<stdout>:         that has that fix.
+[1,9]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,9]<stdout>:         This warning message will be removed when the underlying
+[1,9]<stdout>:         issues have been fixed and you are running a TF version
+[1,9]<stdout>:         that has that fix.
+[1,13]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,13]<stderr>:
+[1,13]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,13]<stderr>:
+[1,10]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,10]<stdout>:         This warning message will be removed when the underlying
+[1,10]<stdout>:         issues have been fixed and you are running a TF version
+[1,10]<stdout>:         that has that fix.
+[1,1]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,1]<stderr>:
+[1,1]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,1]<stderr>:
+[1,13]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,13]<stdout>:         This warning message will be removed when the underlying
+[1,13]<stdout>:         issues have been fixed and you are running a TF version
+[1,13]<stdout>:         that has that fix.
+[1,1]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,1]<stdout>:         This warning message will be removed when the underlying
+[1,1]<stdout>:         issues have been fixed and you are running a TF version
+[1,1]<stdout>:         that has that fix.
+[1,15]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,15]<stderr>:
+[1,12]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,12]<stderr>:
+[1,12]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,12]<stderr>:
+[1,15]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,15]<stderr>:
+[1,5]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,5]<stderr>:
+[1,5]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,5]<stderr>:
+[1,5]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,5]<stdout>:         This warning message will be removed when the underlying
+[1,5]<stdout>:         issues have been fixed and you are running a TF version
+[1,5]<stdout>:         that has that fix.
+[1,12]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,12]<stdout>:         This warning message will be removed when the underlying
+[1,12]<stdout>:         issues have been fixed and you are running a TF version
+[1,12]<stdout>:         that has that fix.
+[1,15]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,15]<stdout>:         This warning message will be removed when the underlying
+[1,15]<stdout>:         issues have been fixed and you are running a TF version
+[1,15]<stdout>:         that has that fix.
+[1,11]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,11]<stderr>:
+[1,11]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,11]<stderr>:
+[1,11]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,11]<stdout>:         This warning message will be removed when the underlying
+[1,11]<stdout>:         issues have been fixed and you are running a TF version
+[1,11]<stdout>:         that has that fix.
+[1,14]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:152: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+[1,14]<stderr>:
+[1,14]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.19.1-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:178: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+[1,14]<stderr>:
+[1,14]<stdout>:WARNING! Combining --use_xla with --manual_fp16 may prevent convergence.
+[1,14]<stdout>:         This warning message will be removed when the underlying
+[1,14]<stdout>:         issues have been fixed and you are running a TF version
+[1,14]<stdout>:         that has that fix.
+[1,2]<stderr>:WARNING:tensorflow:
+[1,2]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,2]<stderr>:For more information, please see:
+[1,2]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,2]<stderr>:  * https://github.com/tensorflow/addons
+[1,2]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,2]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,2]<stderr>:
+[1,2]<stderr>:W0502 14:33:50.778412 140077790168896 lazy_loader.py:50] 
+[1,2]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,2]<stderr>:For more information, please see:
+[1,2]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,2]<stderr>:  * https://github.com/tensorflow/addons
+[1,2]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,2]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,2]<stderr>:
+[1,0]<stderr>:WARNING:tensorflow:
+[1,0]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,0]<stderr>:For more information, please see:
+[1,0]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,0]<stderr>:  * https://github.com/tensorflow/addons
+[1,0]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,0]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,0]<stderr>:
+[1,0]<stderr>:W0502 14:33:50.778538 140505056196416 lazy_loader.py:50] 
+[1,0]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,0]<stderr>:For more information, please see:
+[1,0]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,0]<stderr>:  * https://github.com/tensorflow/addons
+[1,0]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,0]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,0]<stderr>:
+[1,6]<stderr>:WARNING:tensorflow:
+[1,6]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,6]<stderr>:For more information, please see:
+[1,6]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,6]<stderr>:  * https://github.com/tensorflow/addons
+[1,6]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,6]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,6]<stderr>:
+[1,6]<stderr>:W0502 14:33:50.778729 139986368423744 lazy_loader.py:50] 
+[1,6]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,6]<stderr>:For more information, please see:
+[1,6]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,6]<stderr>:  * https://github.com/tensorflow/addons
+[1,6]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,6]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,6]<stderr>:
+[1,7]<stderr>:WARNING:tensorflow:
+[1,7]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,7]<stderr>:For more information, please see:
+[1,7]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,7]<stderr>:  * https://github.com/tensorflow/addons
+[1,7]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,7]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,7]<stderr>:
+[1,7]<stderr>:W0502 14:33:50.779149 140038783526720 lazy_loader.py:50] 
+[1,7]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,7]<stderr>:For more information, please see:
+[1,7]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,7]<stderr>:  * https://github.com/tensorflow/addons
+[1,7]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,7]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,7]<stderr>:
+[1,5]<stderr>:WARNING:tensorflow:
+[1,5]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,5]<stderr>:For more information, please see:
+[1,5]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,5]<stderr>:  * https://github.com/tensorflow/addons
+[1,5]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,5]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,5]<stderr>:
+[1,3]<stderr>:WARNING:tensorflow:
+[1,3]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,3]<stderr>:For more information, please see:
+[1,3]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,3]<stderr>:  * https://github.com/tensorflow/addons
+[1,3]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,3]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,3]<stderr>:
+[1,5]<stderr>:W0502 14:33:50.779223 139961627993920 lazy_loader.py:50] 
+[1,5]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,5]<stderr>:For more information, please see:
+[1,5]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,5]<stderr>:  * https://github.com/tensorflow/addons
+[1,5]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,5]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,5]<stderr>:
+[1,3]<stderr>:W0502 14:33:50.779269 139906241115968 lazy_loader.py:50] 
+[1,3]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,3]<stderr>:For more information, please see:
+[1,3]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,3]<stderr>:  * https://github.com/tensorflow/addons
+[1,3]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,3]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,3]<stderr>:
+[1,1]<stderr>:WARNING:tensorflow:
+[1,1]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,1]<stderr>:For more information, please see:
+[1,1]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,1]<stderr>:  * https://github.com/tensorflow/addons
+[1,1]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,1]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,1]<stderr>:
+[1,4]<stderr>:WARNING:tensorflow:
+[1,4]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,4]<stderr>:For more information, please see:
+[1,4]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,4]<stderr>:  * https://github.com/tensorflow/addons
+[1,4]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,4]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,4]<stderr>:
+[1,1]<stderr>:W0502 14:33:50.779540 140206463244096 lazy_loader.py:50] 
+[1,1]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,1]<stderr>:For more information, please see:
+[1,1]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,1]<stderr>:  * https://github.com/tensorflow/addons
+[1,1]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,1]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,1]<stderr>:
+[1,4]<stderr>:W0502 14:33:50.779556 140295201777472 lazy_loader.py:50] 
+[1,4]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,4]<stderr>:For more information, please see:
+[1,4]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,4]<stderr>:  * https://github.com/tensorflow/addons
+[1,4]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,4]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,4]<stderr>:
+[1,13]<stderr>:WARNING:tensorflow:
+[1,13]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,13]<stderr>:For more information, please see:
+[1,13]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,13]<stderr>:  * https://github.com/tensorflow/addons
+[1,13]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,13]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,13]<stderr>:
+[1,9]<stderr>:WARNING:tensorflow:
+[1,9]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,9]<stderr>:For more information, please see:
+[1,9]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,9]<stderr>:  * https://github.com/tensorflow/addons
+[1,9]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,9]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,9]<stderr>:
+[1,9]<stderr>:W0502 14:33:51.005777 139798321772352 lazy_loader.py:50] 
+[1,9]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,9]<stderr>:For more information, please see:
+[1,9]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,9]<stderr>:  * https://github.com/tensorflow/addons
+[1,9]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,9]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,9]<stderr>:
+[1,13]<stderr>:W0502 14:33:51.005842 139991619028800 lazy_loader.py:50] 
+[1,13]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,13]<stderr>:For more information, please see:
+[1,13]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,13]<stderr>:  * https://github.com/tensorflow/addons
+[1,13]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,13]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,13]<stderr>:
+[1,12]<stderr>:WARNING:tensorflow:
+[1,12]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,12]<stderr>:For more information, please see:
+[1,12]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,12]<stderr>:  * https://github.com/tensorflow/addons
+[1,12]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,12]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,12]<stderr>:
+[1,12]<stderr>:W0502 14:33:51.005989 140549858789184 lazy_loader.py:50] 
+[1,12]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,12]<stderr>:For more information, please see:
+[1,12]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,12]<stderr>:  * https://github.com/tensorflow/addons
+[1,12]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,12]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,12]<stderr>:
+[1,11]<stderr>:WARNING:tensorflow:
+[1,11]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,11]<stderr>:For more information, please see:
+[1,11]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,11]<stderr>:  * https://github.com/tensorflow/addons
+[1,11]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,11]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,11]<stderr>:
+[1,15]<stderr>:WARNING:tensorflow:
+[1,15]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,15]<stderr>:For more information, please see:
+[1,15]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,15]<stderr>:  * https://github.com/tensorflow/addons
+[1,15]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,15]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,15]<stderr>:
+[1,8]<stderr>:WARNING:tensorflow:
+[1,8]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,8]<stderr>:For more information, please see:
+[1,8]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,8]<stderr>:  * https://github.com/tensorflow/addons
+[1,8]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,8]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,8]<stderr>:
+[1,11]<stderr>:W0502 14:33:51.006240 140505098106688 lazy_loader.py:50] 
+[1,11]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,11]<stderr>:For more information, please see:
+[1,11]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,11]<stderr>:  * https://github.com/tensorflow/addons
+[1,11]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,11]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,11]<stderr>:
+[1,15]<stderr>:W0502 14:33:51.006219 139648345073472 lazy_loader.py:50] 
+[1,15]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,15]<stderr>:For more information, please see:
+[1,15]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,15]<stderr>:  * https://github.com/tensorflow/addons
+[1,15]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,15]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,15]<stderr>:
+[1,8]<stderr>:W0502 14:33:51.006221 139928452187968 lazy_loader.py:50] 
+[1,8]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,8]<stderr>:For more information, please see:
+[1,8]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,8]<stderr>:  * https://github.com/tensorflow/addons
+[1,8]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,8]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,8]<stderr>:
+[1,10]<stderr>:WARNING:tensorflow:
+[1,10]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,10]<stderr>:For more information, please see:
+[1,10]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,10]<stderr>:  * https://github.com/tensorflow/addons
+[1,10]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,10]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,10]<stderr>:
+[1,14]<stderr>:WARNING:tensorflow:
+[1,14]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,14]<stderr>:For more information, please see:
+[1,14]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,14]<stderr>:  * https://github.com/tensorflow/addons
+[1,14]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,14]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,14]<stderr>:
+[1,10]<stderr>:W0502 14:33:51.006356 139846618654528 lazy_loader.py:50] 
+[1,10]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,10]<stderr>:For more information, please see:
+[1,10]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,10]<stderr>:  * https://github.com/tensorflow/addons
+[1,10]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,10]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,10]<stderr>:
+[1,14]<stderr>:W0502 14:33:51.006352 140291224258368 lazy_loader.py:50] 
+[1,14]<stderr>:The TensorFlow contrib module will not be included in TensorFlow 2.0.
+[1,14]<stderr>:For more information, please see:
+[1,14]<stderr>:  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+[1,14]<stderr>:  * https://github.com/tensorflow/addons
+[1,14]<stderr>:  * https://github.com/tensorflow/io (for I/O related ops)
+[1,14]<stderr>:If you depend on functionality not listed there, please file an issue.
+[1,14]<stderr>:
+[1,0]<stderr>:INFO:tensorflow:***** Configuaration *****
+[1,0]<stderr>:I0502 14:33:51.308628 140505056196416 run_pretraining.py:577] ***** Configuaration *****
+[1,0]<stderr>:INFO:tensorflow:  logtostderr: False
+[1,0]<stderr>:I0502 14:33:51.308772 140505056196416 run_pretraining.py:579]   logtostderr: False
+[1,0]<stderr>:INFO:tensorflow:  alsologtostderr: False
+[1,0]<stderr>:I0502 14:33:51.308822 140505056196416 run_pretraining.py:579]   alsologtostderr: False
+[1,0]<stderr>:INFO:tensorflow:  log_dir: 
+[1,0]<stderr>:I0502 14:33:51.308864 140505056196416 run_pretraining.py:579]   log_dir: 
+[1,0]<stderr>:INFO:tensorflow:  v: 0
+[1,0]<stderr>:I0502 14:33:51.308904 140505056196416 run_pretraining.py:579]   v: 0
+[1,0]<stderr>:INFO:tensorflow:  verbosity: 0
+[1,0]<stderr>:I0502 14:33:51.308957 140505056196416 run_pretraining.py:579]   verbosity: 0
+[1,0]<stderr>:INFO:tensorflow:  stderrthreshold: fatal
+[1,0]<stderr>:I0502 14:33:51.308994 140505056196416 run_pretraining.py:579]   stderrthreshold: fatal
+[1,0]<stderr>:INFO:tensorflow:  showprefixforinfo: True
+[1,0]<stderr>:I0502 14:33:51.309030 140505056196416 run_pretraining.py:579]   showprefixforinfo: True
+[1,0]<stderr>:INFO:tensorflow:  run_with_pdb: False
+[1,0]<stderr>:I0502 14:33:51.309066 140505056196416 run_pretraining.py:579]   run_with_pdb: False
+[1,0]<stderr>:INFO:tensorflow:  pdb_post_mortem: False
+[1,0]<stderr>:I0502 14:33:51.309101 140505056196416 run_pretraining.py:579]   pdb_post_mortem: False
+[1,0]<stderr>:INFO:tensorflow:  run_with_profiling: False
+[1,0]<stderr>:I0502 14:33:51.309136 140505056196416 run_pretraining.py:579]   run_with_profiling: False
+[1,0]<stderr>:INFO:tensorflow:  profile_file: None
+[1,0]<stderr>:I0502 14:33:51.309173 140505056196416 run_pretraining.py:579]   profile_file: None
+[1,0]<stderr>:INFO:tensorflow:  use_cprofile_for_profiling: True
+[1,0]<stderr>:I0502 14:33:51.309208 140505056196416 run_pretraining.py:579]   use_cprofile_for_profiling: True
+[1,0]<stderr>:INFO:tensorflow:  only_check_args: False
+[1,0]<stderr>:I0502 14:33:51.309243 140505056196416 run_pretraining.py:579]   only_check_args: False
+[1,0]<stderr>:INFO:tensorflow:  op_conversion_fallback_to_while_loop: False
+[1,0]<stderr>:I0502 14:33:51.309279 140505056196416 run_pretraining.py:579]   op_conversion_fallback_to_while_loop: False
+[1,4]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,4]<stderr>:  visible_device_list: "4"
+[1,4]<stderr>:}
+[1,4]<stderr>:graph_options {
+[1,4]<stderr>:  optimizer_options {
+[1,4]<stderr>:    global_jit_level: ON_1
+[1,4]<stderr>:  }
+[1,4]<stderr>:  rewrite_options {
+[1,4]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,4]<stderr>:  }
+[1,4]<stderr>:}
+[1,4]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f9775ded550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  test_random_seed: 301
+[1,0]<stderr>:I0502 14:33:51.309315 140505056196416 run_pretraining.py:579]   test_random_seed: 301
+[1,0]<stderr>:INFO:tensorflow:  test_srcdir: 
+[1,0]<stderr>:I0502 14:33:51.309352 140505056196416 run_pretraining.py:579]   test_srcdir: 
+[1,4]<stderr>:I0502 14:33:51.308942 140295201777472 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,4]<stderr>:  visible_device_list: "4"
+[1,4]<stderr>:}
+[1,4]<stderr>:graph_options {
+[1,4]<stderr>:  optimizer_options {
+[1,4]<stderr>:    global_jit_level: ON_1
+[1,4]<stderr>:  }
+[1,4]<stderr>:  rewrite_options {
+[1,4]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,4]<stderr>:  }
+[1,4]<stderr>:}
+[1,4]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f9775ded550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  test_tmpdir: /tmp/absl_testing
+[1,0]<stderr>:I0502 14:33:51.309388 140505056196416 run_pretraining.py:579]   test_tmpdir: /tmp/absl_testing
+[1,2]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,2]<stderr>:  visible_device_list: "2"
+[1,2]<stderr>:}
+[1,2]<stderr>:graph_options {
+[1,2]<stderr>:  optimizer_options {
+[1,2]<stderr>:    global_jit_level: ON_1
+[1,2]<stderr>:  }
+[1,2]<stderr>:  rewrite_options {
+[1,2]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,2]<stderr>:  }
+[1,2]<stderr>:}
+[1,2]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f64d70bc780>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  test_randomize_ordering_seed: 
+[1,0]<stderr>:I0502 14:33:51.309423 140505056196416 run_pretraining.py:579]   test_randomize_ordering_seed: 
+[1,1]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,1]<stderr>:  visible_device_list: "1"
+[1,1]<stderr>:}
+[1,1]<stderr>:graph_options {
+[1,1]<stderr>:  optimizer_options {
+[1,1]<stderr>:    global_jit_level: ON_1
+[1,1]<stderr>:  }
+[1,1]<stderr>:  rewrite_options {
+[1,1]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,1]<stderr>:  }
+[1,1]<stderr>:}
+[1,1]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f82cc870748>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  xml_output_file: 
+[1,0]<stderr>:I0502 14:33:51.309458 140505056196416 run_pretraining.py:579]   xml_output_file: 
+[1,2]<stderr>:I0502 14:33:51.309035 140077790168896 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,2]<stderr>:  visible_device_list: "2"
+[1,2]<stderr>:}
+[1,2]<stderr>:graph_options {
+[1,2]<stderr>:  optimizer_options {
+[1,2]<stderr>:    global_jit_level: ON_1
+[1,2]<stderr>:  }
+[1,2]<stderr>:  rewrite_options {
+[1,2]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,2]<stderr>:  }
+[1,2]<stderr>:}
+[1,2]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f64d70bc780>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,7]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,7]<stderr>:  visible_device_list: "7"
+[1,7]<stderr>:}
+[1,7]<stderr>:graph_options {
+[1,7]<stderr>:  optimizer_options {
+[1,7]<stderr>:    global_jit_level: ON_1
+[1,7]<stderr>:  }
+[1,7]<stderr>:  rewrite_options {
+[1,7]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,7]<stderr>:  }
+[1,7]<stderr>:}
+[1,7]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f5bc2242748>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  bert_config_file: /fsx/bert-tfrecords/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/bert_config.json
+[1,0]<stderr>:I0502 14:33:51.309493 140505056196416 run_pretraining.py:579]   bert_config_file: /fsx/bert-tfrecords/download/google_pretrained_weights/uncased_L-24_H-1024_A-16/bert_config.json
+[1,5]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,5]<stderr>:  visible_device_list: "5"
+[1,5]<stderr>:}
+[1,5]<stderr>:graph_options {
+[1,5]<stderr>:  optimizer_options {
+[1,5]<stderr>:    global_jit_level: ON_1
+[1,5]<stderr>:  }
+[1,5]<stderr>:  rewrite_options {
+[1,5]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,5]<stderr>:  }
+[1,5]<stderr>:}
+[1,5]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f49cb530550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,7]<stderr>:I0502 14:33:51.309099 140038783526720 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,7]<stderr>:  visible_device_list: "7"
+[1,7]<stderr>:}
+[1,7]<stderr>:graph_options {
+[1,7]<stderr>:  optimizer_options {
+[1,7]<stderr>:    global_jit_level: ON_1
+[1,7]<stderr>:  }
+[1,7]<stderr>:  rewrite_options {
+[1,7]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,7]<stderr>:  }
+[1,7]<stderr>:}
+[1,7]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f5bc2242748>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,1]<stderr>:I0502 14:33:51.309076 140206463244096 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,1]<stderr>:  visible_device_list: "1"
+[1,1]<stderr>:}
+[1,1]<stderr>:graph_options {
+[1,1]<stderr>:  optimizer_options {
+[1,1]<stderr>:    global_jit_level: ON_1
+[1,1]<stderr>:  }
+[1,1]<stderr>:  rewrite_options {
+[1,1]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,1]<stderr>:  }
+[1,1]<stderr>:}
+[1,1]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f82cc870748>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  input_files_dir: /fsx/bert-tfrecords/tfrecord/lower_case_1_seq_len_128_max_pred_20_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5_shard_1472_test_split_10/books_wiki_en_corpus/training
+[1,0]<stderr>:I0502 14:33:51.309529 140505056196416 run_pretraining.py:579]   input_files_dir: /fsx/bert-tfrecords/tfrecord/lower_case_1_seq_len_128_max_pred_20_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5_shard_1472_test_split_10/books_wiki_en_corpus/training
+[1,0]<stderr>:INFO:tensorflow:  eval_files_dir: /fsx/bert-tfrecords/tfrecord/lower_case_1_seq_len_128_max_pred_20_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5_shard_1472_test_split_10/books_wiki_en_corpus/test
+[1,0]<stderr>:I0502 14:33:51.309564 140505056196416 run_pretraining.py:579]   eval_files_dir: /fsx/bert-tfrecords/tfrecord/lower_case_1_seq_len_128_max_pred_20_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5_shard_1472_test_split_10/books_wiki_en_corpus/test
+[1,3]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,3]<stderr>:  visible_device_list: "3"
+[1,3]<stderr>:}
+[1,3]<stderr>:graph_options {
+[1,3]<stderr>:  optimizer_options {
+[1,3]<stderr>:    global_jit_level: ON_1
+[1,3]<stderr>:  }
+[1,3]<stderr>:  rewrite_options {
+[1,3]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,3]<stderr>:  }
+[1,3]<stderr>:}
+[1,3]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f3ce5f63550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,5]<stderr>:I0502 14:33:51.309104 139961627993920 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,5]<stderr>:  visible_device_list: "5"
+[1,5]<stderr>:}
+[1,5]<stderr>:graph_options {
+[1,5]<stderr>:  optimizer_options {
+[1,5]<stderr>:    global_jit_level: ON_1
+[1,5]<stderr>:  }
+[1,5]<stderr>:  rewrite_options {
+[1,5]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,5]<stderr>:  }
+[1,5]<stderr>:}
+[1,5]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f49cb530550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  output_dir: /shared/checkpoints/phase_1
+[1,0]<stderr>:I0502 14:33:51.309599 140505056196416 run_pretraining.py:579]   output_dir: /shared/checkpoints/phase_1
+[1,3]<stderr>:I0502 14:33:51.309145 139906241115968 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,3]<stderr>:  visible_device_list: "3"
+[1,3]<stderr>:}
+[1,3]<stderr>:graph_options {
+[1,3]<stderr>:  optimizer_options {
+[1,3]<stderr>:    global_jit_level: ON_1
+[1,3]<stderr>:  }
+[1,3]<stderr>:  rewrite_options {
+[1,3]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,3]<stderr>:  }
+[1,3]<stderr>:}
+[1,3]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f3ce5f63550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:INFO:tensorflow:  dllog_path: /results/bert_dllog.json
+[1,0]<stderr>:I0502 14:33:51.309634 140505056196416 run_pretraining.py:579]   dllog_path: /results/bert_dllog.json
+[1,4]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f977412c0d0>) includes params argument, but params are not passed to Estimator.
+[1,0]<stderr>:INFO:tensorflow:  init_checkpoint: None
+[1,0]<stderr>:I0502 14:33:51.309669 140505056196416 run_pretraining.py:579]   init_checkpoint: None
+[1,4]<stderr>:W0502 14:33:51.309459 140295201777472 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f977412c0d0>) includes params argument, but params are not passed to Estimator.
+[1,0]<stderr>:INFO:tensorflow:  optimizer_type: lamb
+[1,0]<stderr>:I0502 14:33:51.309704 140505056196416 run_pretraining.py:579]   optimizer_type: lamb
+[1,0]<stderr>:INFO:tensorflow:  max_seq_length: 128
+[1,0]<stderr>:I0502 14:33:51.309739 140505056196416 run_pretraining.py:579]   max_seq_length: 128
+[1,4]<stderr>:INFO:tensorflow:***** Running training *****
+[1,4]<stderr>:I0502 14:33:51.309746 140295201777472 run_pretraining.py:623] ***** Running training *****
+[1,2]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f64d40830d0>) includes params argument, but params are not passed to Estimator.
+[1,0]<stderr>:INFO:tensorflow:  max_predictions_per_seq: 20
+[1,0]<stderr>:I0502 14:33:51.309774 140505056196416 run_pretraining.py:579]   max_predictions_per_seq: 20
+[1,2]<stderr>:W0502 14:33:51.309565 140077790168896 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f64d40830d0>) includes params argument, but params are not passed to Estimator.
+[1,0]<stderr>:INFO:tensorflow:  do_train: True
+[1,0]<stderr>:I0502 14:33:51.309808 140505056196416 run_pretraining.py:579]   do_train: True
+[1,1]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f82c06f20d0>) includes params argument, but params are not passed to Estimator.
+[1,1]<stderr>:W0502 14:33:51.309610 140206463244096 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f82c06f20d0>) includes params argument, but params are not passed to Estimator.
+[1,7]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f5bc002b0d0>) includes params argument, but params are not passed to Estimator.
+[1,7]<stderr>:W0502 14:33:51.309626 140038783526720 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f5bc002b0d0>) includes params argument, but params are not passed to Estimator.
+[1,0]<stderr>:INFO:tensorflow:  do_eval: True
+[1,0]<stderr>:I0502 14:33:51.309843 140505056196416 run_pretraining.py:579]   do_eval: True
+[1,5]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f49c80db0d0>) includes params argument, but params are not passed to Estimator.
+[1,5]<stderr>:W0502 14:33:51.309677 139961627993920 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f49c80db0d0>) includes params argument, but params are not passed to Estimator.
+[1,2]<stderr>:INFO:tensorflow:***** Running training *****
+[1,2]<stderr>:I0502 14:33:51.309870 140077790168896 run_pretraining.py:623] ***** Running training *****
+[1,0]<stderr>:INFO:tensorflow:  train_batch_size: 64
+[1,0]<stderr>:I0502 14:33:51.309878 140505056196416 run_pretraining.py:579]   train_batch_size: 64
+[1,0]<stderr>:INFO:tensorflow:  eval_batch_size: 8
+[1,7]<stderr>:INFO:tensorflow:***** Running training *****
+[1,7]<stderr>:I0502 14:33:51.309909 140038783526720 run_pretraining.py:623] ***** Running training *****
+[1,1]<stderr>:INFO:tensorflow:***** Running training *****
+[1,1]<stderr>:I0502 14:33:51.309907 140206463244096 run_pretraining.py:623] ***** Running training *****
+[1,0]<stderr>:I0502 14:33:51.309913 140505056196416 run_pretraining.py:579]   eval_batch_size: 8
+[1,3]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f3ce408a0d0>) includes params argument, but params are not passed to Estimator.
+[1,4]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,0]<stderr>:INFO:tensorflow:  learning_rate: 4.6875e-05
+[1,0]<stderr>:I0502 14:33:51.309954 140505056196416 run_pretraining.py:579]   learning_rate: 4.6875e-05
+[1,4]<stderr>:I0502 14:33:51.309794 140295201777472 run_pretraining.py:624]   Batch size = 64
+[1,3]<stderr>:W0502 14:33:51.309739 139906241115968 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f3ce408a0d0>) includes params argument, but params are not passed to Estimator.
+[1,5]<stderr>:INFO:tensorflow:***** Running training *****
+[1,5]<stderr>:I0502 14:33:51.309972 139961627993920 run_pretraining.py:623] ***** Running training *****
+[1,0]<stderr>:INFO:tensorflow:  num_train_steps: 1000
+[1,0]<stderr>:I0502 14:33:51.309989 140505056196416 run_pretraining.py:579]   num_train_steps: 1000
+[1,0]<stderr>:INFO:tensorflow:  num_warmup_steps: 2800
+[1,0]<stderr>:I0502 14:33:51.310024 140505056196416 run_pretraining.py:579]   num_warmup_steps: 2800
+[1,0]<stderr>:INFO:tensorflow:  save_checkpoints_steps: 7820
+[1,3]<stderr>:INFO:tensorflow:***** Running training *****
+[1,3]<stderr>:I0502 14:33:51.310050 139906241115968 run_pretraining.py:623] ***** Running training *****
+[1,0]<stderr>:I0502 14:33:51.310059 140505056196416 run_pretraining.py:579]   save_checkpoints_steps: 7820
+[1,0]<stderr>:INFO:tensorflow:  display_loss_steps: 1
+[1,2]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,0]<stderr>:I0502 14:33:51.310094 140505056196416 run_pretraining.py:579]   display_loss_steps: 1
+[1,2]<stderr>:I0502 14:33:51.309920 140077790168896 run_pretraining.py:624]   Batch size = 64
+[1,1]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,1]<stderr>:I0502 14:33:51.309957 140206463244096 run_pretraining.py:624]   Batch size = 64
+[1,7]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,7]<stderr>:I0502 14:33:51.309958 140038783526720 run_pretraining.py:624]   Batch size = 64
+[1,0]<stderr>:INFO:tensorflow:  iterations_per_loop: 1000
+[1,0]<stderr>:I0502 14:33:51.310129 140505056196416 run_pretraining.py:579]   iterations_per_loop: 1000
+[1,0]<stderr>:INFO:tensorflow:  max_eval_steps: 100
+[1,0]<stderr>:I0502 14:33:51.310164 140505056196416 run_pretraining.py:579]   max_eval_steps: 100
+[1,0]<stderr>:INFO:tensorflow:  num_accumulation_steps: 128
+[1,5]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,5]<stderr>:I0502 14:33:51.310021 139961627993920 run_pretraining.py:624]   Batch size = 64
+[1,0]<stderr>:I0502 14:33:51.310199 140505056196416 run_pretraining.py:579]   num_accumulation_steps: 128
+[1,0]<stderr>:INFO:tensorflow:  allreduce_post_accumulation: True
+[1,0]<stderr>:I0502 14:33:51.310234 140505056196416 run_pretraining.py:579]   allreduce_post_accumulation: True
+[1,3]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,3]<stderr>:I0502 14:33:51.310101 139906241115968 run_pretraining.py:624]   Batch size = 64
+[1,0]<stderr>:INFO:tensorflow:  verbose_logging: False
+[1,0]<stderr>:I0502 14:33:51.310269 140505056196416 run_pretraining.py:579]   verbose_logging: False
+[1,0]<stderr>:INFO:tensorflow:  horovod: True
+[1,0]<stderr>:I0502 14:33:51.310303 140505056196416 run_pretraining.py:579]   horovod: True
+[1,0]<stderr>:INFO:tensorflow:  report_loss: True
+[1,0]<stderr>:I0502 14:33:51.310339 140505056196416 run_pretraining.py:579]   report_loss: True
+[1,0]<stderr>:INFO:tensorflow:  manual_fp16: True
+[1,0]<stderr>:I0502 14:33:51.310374 140505056196416 run_pretraining.py:579]   manual_fp16: True
+[1,0]<stderr>:INFO:tensorflow:  amp: False
+[1,0]<stderr>:I0502 14:33:51.310409 140505056196416 run_pretraining.py:579]   amp: False
+[1,0]<stderr>:INFO:tensorflow:  use_xla: True
+[1,0]<stderr>:I0502 14:33:51.310444 140505056196416 run_pretraining.py:579]   use_xla: True
+[1,0]<stderr>:INFO:tensorflow:  init_loss_scale: 4294967296
+[1,0]<stderr>:I0502 14:33:51.310479 140505056196416 run_pretraining.py:579]   init_loss_scale: 4294967296
+[1,0]<stderr>:INFO:tensorflow:  ?: False
+[1,0]<stderr>:I0502 14:33:51.310514 140505056196416 run_pretraining.py:579]   ?: False
+[1,0]<stderr>:INFO:tensorflow:  help: False
+[1,0]<stderr>:I0502 14:33:51.310549 140505056196416 run_pretraining.py:579]   help: False
+[1,0]<stderr>:INFO:tensorflow:  helpshort: False
+[1,0]<stderr>:I0502 14:33:51.310586 140505056196416 run_pretraining.py:579]   helpshort: False
+[1,0]<stderr>:INFO:tensorflow:  helpfull: False
+[1,0]<stderr>:I0502 14:33:51.310622 140505056196416 run_pretraining.py:579]   helpfull: False
+[1,0]<stderr>:INFO:tensorflow:  helpxml: False
+[1,0]<stderr>:I0502 14:33:51.310657 140505056196416 run_pretraining.py:579]   helpxml: False
+[1,0]<stderr>:INFO:tensorflow:**************************
+[1,0]<stderr>:I0502 14:33:51.310689 140505056196416 run_pretraining.py:580] **************************
+[1,0]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': 7820, '_save_checkpoints_steps': 7820, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,0]<stderr>:  visible_device_list: "0"
+[1,0]<stderr>:}
+[1,0]<stderr>:graph_options {
+[1,0]<stderr>:  optimizer_options {
+[1,0]<stderr>:    global_jit_level: ON_1
+[1,0]<stderr>:  }
+[1,0]<stderr>:  rewrite_options {
+[1,0]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,0]<stderr>:  }
+[1,0]<stderr>:}
+[1,0]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fc85207e6a0>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:I0502 14:33:51.311017 140505056196416 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': 7820, '_save_checkpoints_steps': 7820, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,0]<stderr>:  visible_device_list: "0"
+[1,0]<stderr>:}
+[1,0]<stderr>:graph_options {
+[1,0]<stderr>:  optimizer_options {
+[1,0]<stderr>:    global_jit_level: ON_1
+[1,0]<stderr>:  }
+[1,0]<stderr>:  rewrite_options {
+[1,0]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,0]<stderr>:  }
+[1,0]<stderr>:}
+[1,0]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fc85207e6a0>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,0]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7fc850079048>) includes params argument, but params are not passed to Estimator.
+[1,0]<stderr>:W0502 14:33:51.311480 140505056196416 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7fc850079048>) includes params argument, but params are not passed to Estimator.
+[1,0]<stderr>:INFO:tensorflow:***** Running training *****
+[1,0]<stderr>:I0502 14:33:51.311784 140505056196416 run_pretraining.py:623] ***** Running training *****
+[1,0]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,0]<stderr>:I0502 14:33:51.311835 140505056196416 run_pretraining.py:624]   Batch size = 64
+[1,6]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,6]<stderr>:  visible_device_list: "6"
+[1,6]<stderr>:}
+[1,6]<stderr>:graph_options {
+[1,6]<stderr>:  optimizer_options {
+[1,6]<stderr>:    global_jit_level: ON_1
+[1,6]<stderr>:  }
+[1,6]<stderr>:  rewrite_options {
+[1,6]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,6]<stderr>:  }
+[1,6]<stderr>:}
+[1,6]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f4f8df1f550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,6]<stderr>:I0502 14:33:51.353117 139986368423744 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,6]<stderr>:  visible_device_list: "6"
+[1,6]<stderr>:}
+[1,6]<stderr>:graph_options {
+[1,6]<stderr>:  optimizer_options {
+[1,6]<stderr>:    global_jit_level: ON_1
+[1,6]<stderr>:  }
+[1,6]<stderr>:  rewrite_options {
+[1,6]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,6]<stderr>:  }
+[1,6]<stderr>:}
+[1,6]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f4f8df1f550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,6]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f4f8c0460d0>) includes params argument, but params are not passed to Estimator.
+[1,6]<stderr>:W0502 14:33:51.354019 139986368423744 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f4f8c0460d0>) includes params argument, but params are not passed to Estimator.
+[1,6]<stderr>:INFO:tensorflow:***** Running training *****
+[1,6]<stderr>:I0502 14:33:51.354534 139986368423744 run_pretraining.py:623] ***** Running training *****
+[1,6]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,6]<stderr>:I0502 14:33:51.354617 139986368423744 run_pretraining.py:624]   Batch size = 64
+[1,4]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,4]<stderr>:
+[1,4]<stderr>:W0502 14:33:51.391907 140295201777472 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,4]<stderr>:
+[1,7]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,7]<stderr>:
+[1,7]<stderr>:W0502 14:33:51.392231 140038783526720 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,7]<stderr>:
+[1,0]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,0]<stderr>:
+[1,0]<stderr>:W0502 14:33:51.392688 140505056196416 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,0]<stderr>:
+[1,2]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,2]<stderr>:
+[1,1]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,1]<stderr>:
+[1,2]<stderr>:W0502 14:33:51.393362 140077790168896 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,2]<stderr>:
+[1,1]<stderr>:W0502 14:33:51.393371 140206463244096 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,1]<stderr>:
+[1,5]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,5]<stderr>:
+[1,5]<stderr>:W0502 14:33:51.394027 139961627993920 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,5]<stderr>:
+[1,3]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,3]<stderr>:
+[1,3]<stderr>:W0502 14:33:51.394720 139906241115968 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,3]<stderr>:
+[1,6]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,6]<stderr>:
+[1,6]<stderr>:W0502 14:33:51.465979 139986368423744 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,6]<stderr>:
+[1,4]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,4]<stderr>:I0502 14:33:51.478281 140295201777472 estimator.py:1148] Calling model_fn.
+[1,4]<stderr>:INFO:tensorflow:*** Features ***
+[1,4]<stderr>:I0502 14:33:51.478403 140295201777472 run_pretraining.py:257] *** Features ***
+[1,7]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,4]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,4]<stderr>:I0502 14:33:51.478476 140295201777472 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,7]<stderr>:I0502 14:33:51.478418 140038783526720 estimator.py:1148] Calling model_fn.
+[1,4]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,4]<stderr>:I0502 14:33:51.478532 140295201777472 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,7]<stderr>:INFO:tensorflow:*** Features ***
+[1,7]<stderr>:I0502 14:33:51.478549 140038783526720 run_pretraining.py:257] *** Features ***
+[1,4]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,4]<stderr>:I0502 14:33:51.478583 140295201777472 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,7]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,7]<stderr>:I0502 14:33:51.478624 140038783526720 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,4]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,4]<stderr>:I0502 14:33:51.478632 140295201777472 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,7]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,7]<stderr>:I0502 14:33:51.478681 140038783526720 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,4]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,4]<stderr>:I0502 14:33:51.478679 140295201777472 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,4]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,4]<stderr>:I0502 14:33:51.478725 140295201777472 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,7]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,7]<stderr>:I0502 14:33:51.478733 140038783526720 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,4]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,4]<stderr>:I0502 14:33:51.478770 140295201777472 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,7]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,7]<stderr>:I0502 14:33:51.478783 140038783526720 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,0]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,7]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,0]<stderr>:I0502 14:33:51.478752 140505056196416 estimator.py:1148] Calling model_fn.
+[1,7]<stderr>:I0502 14:33:51.478831 140038783526720 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,0]<stderr>:INFO:tensorflow:*** Features ***
+[1,0]<stderr>:I0502 14:33:51.478868 140505056196416 run_pretraining.py:257] *** Features ***
+[1,7]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,7]<stderr>:I0502 14:33:51.478878 140038783526720 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,4]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,4]<stderr>:
+[1,4]<stderr>:W0502 14:33:51.478916 140295201777472 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,4]<stderr>:
+[1,7]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,7]<stderr>:I0502 14:33:51.478925 140038783526720 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,0]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,0]<stderr>:I0502 14:33:51.478942 140505056196416 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,0]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,0]<stderr>:I0502 14:33:51.478998 140505056196416 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,0]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,0]<stderr>:I0502 14:33:51.479049 140505056196416 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,7]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,7]<stderr>:
+[1,0]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,7]<stderr>:W0502 14:33:51.479074 140038783526720 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,7]<stderr>:
+[1,0]<stderr>:I0502 14:33:51.479099 140505056196416 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,0]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,0]<stderr>:I0502 14:33:51.479146 140505056196416 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,0]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,0]<stderr>:I0502 14:33:51.479193 140505056196416 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,0]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,0]<stderr>:I0502 14:33:51.479240 140505056196416 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,0]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,0]<stderr>:
+[1,0]<stderr>:W0502 14:33:51.479389 140505056196416 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,0]<stderr>:
+[1,1]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,1]<stderr>:I0502 14:33:51.479430 140206463244096 estimator.py:1148] Calling model_fn.
+[1,1]<stderr>:INFO:tensorflow:*** Features ***
+[1,1]<stderr>:I0502 14:33:51.479563 140206463244096 run_pretraining.py:257] *** Features ***
+[1,1]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,1]<stderr>:I0502 14:33:51.479636 140206463244096 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,1]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,1]<stderr>:I0502 14:33:51.479691 140206463244096 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,1]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,1]<stderr>:I0502 14:33:51.479746 140206463244096 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,4]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,4]<stderr>:
+[1,1]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,1]<stderr>:I0502 14:33:51.479795 140206463244096 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,4]<stderr>:W0502 14:33:51.479747 140295201777472 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,4]<stderr>:
+[1,1]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,1]<stderr>:I0502 14:33:51.479843 140206463244096 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,1]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,1]<stderr>:I0502 14:33:51.479889 140206463244096 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,7]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,7]<stderr>:
+[1,1]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,1]<stderr>:I0502 14:33:51.479942 140206463244096 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,7]<stderr>:W0502 14:33:51.479896 140038783526720 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,7]<stderr>:
+[1,1]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,1]<stderr>:
+[1,2]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,1]<stderr>:W0502 14:33:51.480093 140206463244096 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,1]<stderr>:
+[1,2]<stderr>:I0502 14:33:51.480076 140077790168896 estimator.py:1148] Calling model_fn.
+[1,2]<stderr>:INFO:tensorflow:*** Features ***
+[1,0]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,0]<stderr>:
+[1,2]<stderr>:I0502 14:33:51.480213 140077790168896 run_pretraining.py:257] *** Features ***
+[1,0]<stderr>:W0502 14:33:51.480206 140505056196416 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,0]<stderr>:
+[1,2]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,2]<stderr>:I0502 14:33:51.480295 140077790168896 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,2]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,2]<stderr>:I0502 14:33:51.480350 140077790168896 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,2]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,2]<stderr>:I0502 14:33:51.480403 140077790168896 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,2]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,2]<stderr>:I0502 14:33:51.480452 140077790168896 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,2]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,2]<stderr>:I0502 14:33:51.480499 140077790168896 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,5]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,2]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,2]<stderr>:I0502 14:33:51.480545 140077790168896 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,5]<stderr>:I0502 14:33:51.480506 139961627993920 estimator.py:1148] Calling model_fn.
+[1,2]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,2]<stderr>:I0502 14:33:51.480602 140077790168896 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,5]<stderr>:INFO:tensorflow:*** Features ***
+[1,5]<stderr>:I0502 14:33:51.480647 139961627993920 run_pretraining.py:257] *** Features ***
+[1,5]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,2]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,2]<stderr>:
+[1,5]<stderr>:I0502 14:33:51.480725 139961627993920 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,2]<stderr>:W0502 14:33:51.480755 140077790168896 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,2]<stderr>:
+[1,5]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,5]<stderr>:I0502 14:33:51.480785 139961627993920 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,5]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,5]<stderr>:I0502 14:33:51.480837 139961627993920 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,5]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,5]<stderr>:I0502 14:33:51.480886 139961627993920 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,5]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,5]<stderr>:I0502 14:33:51.480934 139961627993920 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,1]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,1]<stderr>:
+[1,5]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,5]<stderr>:I0502 14:33:51.480981 139961627993920 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,1]<stderr>:W0502 14:33:51.480951 140206463244096 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,1]<stderr>:
+[1,5]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,5]<stderr>:I0502 14:33:51.481027 139961627993920 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,5]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,5]<stderr>:
+[1,5]<stderr>:W0502 14:33:51.481187 139961627993920 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,5]<stderr>:
+[1,2]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,2]<stderr>:
+[1,2]<stderr>:W0502 14:33:51.481575 140077790168896 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,2]<stderr>:
+[1,5]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,5]<stderr>:
+[1,5]<stderr>:W0502 14:33:51.482016 139961627993920 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,5]<stderr>:
+[1,3]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,3]<stderr>:I0502 14:33:51.482788 139906241115968 estimator.py:1148] Calling model_fn.
+[1,3]<stderr>:INFO:tensorflow:*** Features ***
+[1,3]<stderr>:I0502 14:33:51.482948 139906241115968 run_pretraining.py:257] *** Features ***
+[1,3]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,3]<stderr>:I0502 14:33:51.483028 139906241115968 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,3]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,3]<stderr>:I0502 14:33:51.483088 139906241115968 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,3]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,3]<stderr>:I0502 14:33:51.483142 139906241115968 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,3]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,3]<stderr>:I0502 14:33:51.483194 139906241115968 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,3]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,3]<stderr>:I0502 14:33:51.483244 139906241115968 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,3]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,3]<stderr>:I0502 14:33:51.483292 139906241115968 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,3]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,3]<stderr>:I0502 14:33:51.483338 139906241115968 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,3]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,3]<stderr>:
+[1,3]<stderr>:W0502 14:33:51.483496 139906241115968 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,3]<stderr>:
+[1,3]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,3]<stderr>:
+[1,3]<stderr>:W0502 14:33:51.484351 139906241115968 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,3]<stderr>:
+[1,8]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,8]<stderr>:  visible_device_list: "0"
+[1,8]<stderr>:}
+[1,8]<stderr>:graph_options {
+[1,8]<stderr>:  optimizer_options {
+[1,8]<stderr>:    global_jit_level: ON_1
+[1,8]<stderr>:  }
+[1,8]<stderr>:  rewrite_options {
+[1,8]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,8]<stderr>:  }
+[1,8]<stderr>:}
+[1,8]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f4211db0550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,13]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,13]<stderr>:  visible_device_list: "5"
+[1,13]<stderr>:}
+[1,13]<stderr>:graph_options {
+[1,13]<stderr>:  optimizer_options {
+[1,13]<stderr>:    global_jit_level: ON_1
+[1,13]<stderr>:  }
+[1,13]<stderr>:  rewrite_options {
+[1,13]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,13]<stderr>:  }
+[1,13]<stderr>:}
+[1,13]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f50c6e99630>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,13]<stderr>:I0502 14:33:51.551550 139991619028800 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,13]<stderr>:  visible_device_list: "5"
+[1,13]<stderr>:}
+[1,13]<stderr>:graph_options {
+[1,13]<stderr>:  optimizer_options {
+[1,13]<stderr>:    global_jit_level: ON_1
+[1,13]<stderr>:  }
+[1,13]<stderr>:  rewrite_options {
+[1,13]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,13]<stderr>:  }
+[1,13]<stderr>:}
+[1,13]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f50c6e99630>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,10]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,10]<stderr>:  visible_device_list: "2"
+[1,10]<stderr>:}
+[1,10]<stderr>:graph_options {
+[1,10]<stderr>:  optimizer_options {
+[1,10]<stderr>:    global_jit_level: ON_1
+[1,10]<stderr>:  }
+[1,10]<stderr>:  rewrite_options {
+[1,10]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,10]<stderr>:  }
+[1,10]<stderr>:}
+[1,10]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f2f0427c710>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,10]<stderr>:I0502 14:33:51.551565 139846618654528 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,10]<stderr>:  visible_device_list: "2"
+[1,10]<stderr>:}
+[1,10]<stderr>:graph_options {
+[1,10]<stderr>:  optimizer_options {
+[1,10]<stderr>:    global_jit_level: ON_1
+[1,10]<stderr>:  }
+[1,10]<stderr>:  rewrite_options {
+[1,10]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,10]<stderr>:  }
+[1,10]<stderr>:}
+[1,10]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f2f0427c710>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,9]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,9]<stderr>:  visible_device_list: "1"
+[1,9]<stderr>:}
+[1,9]<stderr>:graph_options {
+[1,9]<stderr>:  optimizer_options {
+[1,9]<stderr>:    global_jit_level: ON_1
+[1,9]<stderr>:  }
+[1,9]<stderr>:  rewrite_options {
+[1,9]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,9]<stderr>:  }
+[1,9]<stderr>:}
+[1,9]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f23c5787588>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,9]<stderr>:I0502 14:33:51.551549 139798321772352 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,9]<stderr>:  visible_device_list: "1"
+[1,9]<stderr>:}
+[1,9]<stderr>:graph_options {
+[1,9]<stderr>:  optimizer_options {
+[1,9]<stderr>:    global_jit_level: ON_1
+[1,9]<stderr>:  }
+[1,9]<stderr>:  rewrite_options {
+[1,9]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,9]<stderr>:  }
+[1,9]<stderr>:}
+[1,9]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f23c5787588>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,8]<stderr>:I0502 14:33:51.551565 139928452187968 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,8]<stderr>:  visible_device_list: "0"
+[1,8]<stderr>:}
+[1,8]<stderr>:graph_options {
+[1,8]<stderr>:  optimizer_options {
+[1,8]<stderr>:    global_jit_level: ON_1
+[1,8]<stderr>:  }
+[1,8]<stderr>:  rewrite_options {
+[1,8]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,8]<stderr>:  }
+[1,8]<stderr>:}
+[1,8]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f4211db0550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,12]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,12]<stderr>:  visible_device_list: "4"
+[1,12]<stderr>:}
+[1,12]<stderr>:graph_options {
+[1,12]<stderr>:  optimizer_options {
+[1,12]<stderr>:    global_jit_level: ON_1
+[1,12]<stderr>:  }
+[1,12]<stderr>:  rewrite_options {
+[1,12]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,12]<stderr>:  }
+[1,12]<stderr>:}
+[1,12]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fd2c0845550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,12]<stderr>:I0502 14:33:51.551589 140549858789184 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,12]<stderr>:  visible_device_list: "4"
+[1,12]<stderr>:}
+[1,12]<stderr>:graph_options {
+[1,12]<stderr>:  optimizer_options {
+[1,12]<stderr>:    global_jit_level: ON_1
+[1,12]<stderr>:  }
+[1,12]<stderr>:  rewrite_options {
+[1,12]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,12]<stderr>:  }
+[1,12]<stderr>:}
+[1,12]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fd2c0845550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,11]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,11]<stderr>:  visible_device_list: "3"
+[1,11]<stderr>:}
+[1,11]<stderr>:graph_options {
+[1,11]<stderr>:  optimizer_options {
+[1,11]<stderr>:    global_jit_level: ON_1
+[1,11]<stderr>:  }
+[1,11]<stderr>:  rewrite_options {
+[1,11]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,11]<stderr>:  }
+[1,11]<stderr>:}
+[1,11]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fc8549ee550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,11]<stderr>:I0502 14:33:51.551612 140505098106688 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,11]<stderr>:  visible_device_list: "3"
+[1,11]<stderr>:}
+[1,11]<stderr>:graph_options {
+[1,11]<stderr>:  optimizer_options {
+[1,11]<stderr>:    global_jit_level: ON_1
+[1,11]<stderr>:  }
+[1,11]<stderr>:  rewrite_options {
+[1,11]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,11]<stderr>:  }
+[1,11]<stderr>:}
+[1,11]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fc8549ee550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,14]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,14]<stderr>:  visible_device_list: "6"
+[1,14]<stderr>:}
+[1,14]<stderr>:graph_options {
+[1,14]<stderr>:  optimizer_options {
+[1,14]<stderr>:    global_jit_level: ON_1
+[1,14]<stderr>:  }
+[1,14]<stderr>:  rewrite_options {
+[1,14]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,14]<stderr>:  }
+[1,14]<stderr>:}
+[1,14]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f9688ca6550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,14]<stderr>:I0502 14:33:51.551636 140291224258368 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,14]<stderr>:  visible_device_list: "6"
+[1,14]<stderr>:}
+[1,14]<stderr>:graph_options {
+[1,14]<stderr>:  optimizer_options {
+[1,14]<stderr>:    global_jit_level: ON_1
+[1,14]<stderr>:  }
+[1,14]<stderr>:  rewrite_options {
+[1,14]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,14]<stderr>:  }
+[1,14]<stderr>:}
+[1,14]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f9688ca6550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,15]<stderr>:INFO:tensorflow:Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,15]<stderr>:  visible_device_list: "7"
+[1,15]<stderr>:}
+[1,15]<stderr>:graph_options {
+[1,15]<stderr>:  optimizer_options {
+[1,15]<stderr>:    global_jit_level: ON_1
+[1,15]<stderr>:  }
+[1,15]<stderr>:  rewrite_options {
+[1,15]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,15]<stderr>:  }
+[1,15]<stderr>:}
+[1,15]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f00da34d550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,15]<stderr>:I0502 14:33:51.551639 139648345073472 estimator.py:212] Using config: {'_model_dir': '/shared/checkpoints/phase_1', '_tf_random_seed': None, '_save_summary_steps': None, '_save_checkpoints_steps': None, '_save_checkpoints_secs': None, '_session_config': gpu_options {
+[1,15]<stderr>:  visible_device_list: "7"
+[1,15]<stderr>:}
+[1,15]<stderr>:graph_options {
+[1,15]<stderr>:  optimizer_options {
+[1,15]<stderr>:    global_jit_level: ON_1
+[1,15]<stderr>:  }
+[1,15]<stderr>:  rewrite_options {
+[1,15]<stderr>:    memory_optimization: NO_MEM_OPT
+[1,15]<stderr>:  }
+[1,15]<stderr>:}
+[1,15]<stderr>:, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 10000, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7f00da34d550>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+[1,9]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f23c40e10d0>) includes params argument, but params are not passed to Estimator.
+[1,10]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f2ef81270d0>) includes params argument, but params are not passed to Estimator.
+[1,8]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f42100ef0d0>) includes params argument, but params are not passed to Estimator.
+[1,8]<stderr>:W0502 14:33:51.552094 139928452187968 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f42100ef0d0>) includes params argument, but params are not passed to Estimator.
+[1,13]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f50c40690d0>) includes params argument, but params are not passed to Estimator.
+[1,13]<stderr>:W0502 14:33:51.552090 139991619028800 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f50c40690d0>) includes params argument, but params are not passed to Estimator.
+[1,9]<stderr>:W0502 14:33:51.552094 139798321772352 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f23c40e10d0>) includes params argument, but params are not passed to Estimator.
+[1,10]<stderr>:W0502 14:33:51.552094 139846618654528 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f2ef81270d0>) includes params argument, but params are not passed to Estimator.
+[1,11]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7fc8501480d0>) includes params argument, but params are not passed to Estimator.
+[1,11]<stderr>:W0502 14:33:51.552142 140505098106688 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7fc8501480d0>) includes params argument, but params are not passed to Estimator.
+[1,10]<stderr>:INFO:tensorflow:***** Running training *****
+[1,10]<stderr>:I0502 14:33:51.552392 139846618654528 run_pretraining.py:623] ***** Running training *****
+[1,9]<stderr>:INFO:tensorflow:***** Running training *****
+[1,9]<stderr>:I0502 14:33:51.552391 139798321772352 run_pretraining.py:623] ***** Running training *****
+[1,12]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7fd2b46f20d0>) includes params argument, but params are not passed to Estimator.
+[1,12]<stderr>:W0502 14:33:51.552180 140549858789184 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7fd2b46f20d0>) includes params argument, but params are not passed to Estimator.
+[1,8]<stderr>:INFO:tensorflow:***** Running training *****
+[1,8]<stderr>:I0502 14:33:51.552397 139928452187968 run_pretraining.py:623] ***** Running training *****
+[1,11]<stderr>:INFO:tensorflow:***** Running training *****
+[1,11]<stderr>:I0502 14:33:51.552423 140505098106688 run_pretraining.py:623] ***** Running training *****
+[1,15]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f00d81360d0>) includes params argument, but params are not passed to Estimator.
+[1,14]<stderr>:WARNING:tensorflow:Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f96880330d0>) includes params argument, but params are not passed to Estimator.
+[1,14]<stderr>:W0502 14:33:51.552219 140291224258368 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f96880330d0>) includes params argument, but params are not passed to Estimator.
+[1,13]<stderr>:INFO:tensorflow:***** Running training *****
+[1,13]<stderr>:I0502 14:33:51.552405 139991619028800 run_pretraining.py:623] ***** Running training *****
+[1,15]<stderr>:W0502 14:33:51.552224 139648345073472 model_fn.py:630] Estimator's model_fn (<function model_fn_builder.<locals>.model_fn at 0x7f00d81360d0>) includes params argument, but params are not passed to Estimator.
+[1,12]<stderr>:INFO:tensorflow:***** Running training *****
+[1,12]<stderr>:I0502 14:33:51.552496 140549858789184 run_pretraining.py:623] ***** Running training *****
+[1,15]<stderr>:INFO:tensorflow:***** Running training *****
+[1,14]<stderr>:INFO:tensorflow:***** Running training *****
+[1,14]<stderr>:I0502 14:33:51.552521 140291224258368 run_pretraining.py:623] ***** Running training *****
+[1,15]<stderr>:I0502 14:33:51.552537 139648345073472 run_pretraining.py:623] ***** Running training *****
+[1,10]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,9]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,9]<stderr>:I0502 14:33:51.552441 139798321772352 run_pretraining.py:624]   Batch size = 64
+[1,8]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,8]<stderr>:I0502 14:33:51.552446 139928452187968 run_pretraining.py:624]   Batch size = 64
+[1,10]<stderr>:I0502 14:33:51.552441 139846618654528 run_pretraining.py:624]   Batch size = 64
+[1,11]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,11]<stderr>:I0502 14:33:51.552473 140505098106688 run_pretraining.py:624]   Batch size = 64
+[1,13]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,13]<stderr>:I0502 14:33:51.552462 139991619028800 run_pretraining.py:624]   Batch size = 64
+[1,12]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,12]<stderr>:I0502 14:33:51.552544 140549858789184 run_pretraining.py:624]   Batch size = 64
+[1,14]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,14]<stderr>:I0502 14:33:51.552570 140291224258368 run_pretraining.py:624]   Batch size = 64
+[1,15]<stderr>:INFO:tensorflow:  Batch size = 64
+[1,15]<stderr>:I0502 14:33:51.552587 139648345073472 run_pretraining.py:624]   Batch size = 64
+[1,6]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,6]<stderr>:I0502 14:33:51.591788 139986368423744 estimator.py:1148] Calling model_fn.
+[1,6]<stderr>:INFO:tensorflow:*** Features ***
+[1,6]<stderr>:I0502 14:33:51.591929 139986368423744 run_pretraining.py:257] *** Features ***
+[1,6]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,6]<stderr>:I0502 14:33:51.592005 139986368423744 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,6]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,6]<stderr>:I0502 14:33:51.592061 139986368423744 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,6]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,6]<stderr>:I0502 14:33:51.592115 139986368423744 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,6]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,6]<stderr>:I0502 14:33:51.592166 139986368423744 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,6]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,6]<stderr>:I0502 14:33:51.592228 139986368423744 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,6]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,6]<stderr>:I0502 14:33:51.592275 139986368423744 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,6]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,6]<stderr>:I0502 14:33:51.592321 139986368423744 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,6]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,6]<stderr>:
+[1,6]<stderr>:W0502 14:33:51.592472 139986368423744 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,6]<stderr>:
+[1,6]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,6]<stderr>:
+[1,6]<stderr>:W0502 14:33:51.593341 139986368423744 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,6]<stderr>:
+[1,8]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,8]<stderr>:
+[1,8]<stderr>:W0502 14:33:51.634596 139928452187968 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,8]<stderr>:
+[1,13]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,13]<stderr>:
+[1,13]<stderr>:W0502 14:33:51.634688 139991619028800 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,13]<stderr>:
+[1,10]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,10]<stderr>:
+[1,10]<stderr>:W0502 14:33:51.634916 139846618654528 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,10]<stderr>:
+[1,9]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,9]<stderr>:
+[1,9]<stderr>:W0502 14:33:51.635659 139798321772352 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,9]<stderr>:
+[1,12]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,12]<stderr>:
+[1,12]<stderr>:W0502 14:33:51.635895 140549858789184 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,12]<stderr>:
+[1,14]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,14]<stderr>:
+[1,14]<stderr>:W0502 14:33:51.636062 140291224258368 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,14]<stderr>:
+[1,11]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,11]<stderr>:
+[1,11]<stderr>:W0502 14:33:51.636348 140505098106688 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,11]<stderr>:
+[1,15]<stderr>:WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,15]<stderr>:
+[1,15]<stderr>:W0502 14:33:51.636869 139648345073472 module_wrapper.py:139] From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+[1,15]<stderr>:
+[1,8]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,8]<stderr>:I0502 14:33:51.720810 139928452187968 estimator.py:1148] Calling model_fn.
+[1,8]<stderr>:INFO:tensorflow:*** Features ***
+[1,8]<stderr>:I0502 14:33:51.720934 139928452187968 run_pretraining.py:257] *** Features ***
+[1,8]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,8]<stderr>:I0502 14:33:51.721008 139928452187968 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,8]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,8]<stderr>:I0502 14:33:51.721062 139928452187968 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,8]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,8]<stderr>:I0502 14:33:51.721122 139928452187968 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,8]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,8]<stderr>:I0502 14:33:51.721174 139928452187968 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,8]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,8]<stderr>:I0502 14:33:51.721223 139928452187968 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,13]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,8]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,8]<stderr>:I0502 14:33:51.721273 139928452187968 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,13]<stderr>:I0502 14:33:51.721206 139991619028800 estimator.py:1148] Calling model_fn.
+[1,8]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,8]<stderr>:I0502 14:33:51.721318 139928452187968 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,13]<stderr>:INFO:tensorflow:*** Features ***
+[1,13]<stderr>:I0502 14:33:51.721337 139991619028800 run_pretraining.py:257] *** Features ***
+[1,8]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,8]<stderr>:
+[1,8]<stderr>:W0502 14:33:51.721462 139928452187968 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,8]<stderr>:
+[1,13]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,13]<stderr>:I0502 14:33:51.721420 139991619028800 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,13]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,13]<stderr>:I0502 14:33:51.721493 139991619028800 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,13]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,13]<stderr>:I0502 14:33:51.721549 139991619028800 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,13]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,13]<stderr>:I0502 14:33:51.721604 139991619028800 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,13]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,13]<stderr>:I0502 14:33:51.721652 139991619028800 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,13]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,13]<stderr>:I0502 14:33:51.721699 139991619028800 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,13]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,13]<stderr>:I0502 14:33:51.721749 139991619028800 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,13]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,13]<stderr>:
+[1,10]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,13]<stderr>:W0502 14:33:51.721930 139991619028800 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,13]<stderr>:
+[1,10]<stderr>:I0502 14:33:51.721915 139846618654528 estimator.py:1148] Calling model_fn.
+[1,10]<stderr>:INFO:tensorflow:*** Features ***
+[1,10]<stderr>:I0502 14:33:51.722035 139846618654528 run_pretraining.py:257] *** Features ***
+[1,10]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,10]<stderr>:I0502 14:33:51.722114 139846618654528 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,10]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,10]<stderr>:I0502 14:33:51.722173 139846618654528 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,10]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,10]<stderr>:I0502 14:33:51.722227 139846618654528 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,10]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,10]<stderr>:I0502 14:33:51.722276 139846618654528 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,8]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,8]<stderr>:
+[1,10]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,10]<stderr>:I0502 14:33:51.722324 139846618654528 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,8]<stderr>:W0502 14:33:51.722288 139928452187968 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,8]<stderr>:
+[1,10]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,10]<stderr>:I0502 14:33:51.722370 139846618654528 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,14]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,10]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,10]<stderr>:I0502 14:33:51.722416 139846618654528 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,14]<stderr>:I0502 14:33:51.722322 140291224258368 estimator.py:1148] Calling model_fn.
+[1,14]<stderr>:INFO:tensorflow:*** Features ***
+[1,14]<stderr>:I0502 14:33:51.722456 140291224258368 run_pretraining.py:257] *** Features ***
+[1,14]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,14]<stderr>:I0502 14:33:51.722529 140291224258368 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,10]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,10]<stderr>:
+[1,10]<stderr>:W0502 14:33:51.722564 139846618654528 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,10]<stderr>:
+[1,14]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,14]<stderr>:I0502 14:33:51.722591 140291224258368 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,14]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,14]<stderr>:I0502 14:33:51.722641 140291224258368 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,14]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,14]<stderr>:I0502 14:33:51.722689 140291224258368 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,14]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,14]<stderr>:I0502 14:33:51.722735 140291224258368 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,14]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,14]<stderr>:I0502 14:33:51.722780 140291224258368 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,14]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,14]<stderr>:I0502 14:33:51.722825 140291224258368 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,12]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,13]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,13]<stderr>:
+[1,12]<stderr>:I0502 14:33:51.722800 140549858789184 estimator.py:1148] Calling model_fn.
+[1,13]<stderr>:W0502 14:33:51.722841 139991619028800 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,13]<stderr>:
+[1,12]<stderr>:INFO:tensorflow:*** Features ***
+[1,12]<stderr>:I0502 14:33:51.722939 140549858789184 run_pretraining.py:257] *** Features ***
+[1,14]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,14]<stderr>:
+[1,14]<stderr>:W0502 14:33:51.722979 140291224258368 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,14]<stderr>:
+[1,12]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,12]<stderr>:I0502 14:33:51.723018 140549858789184 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,11]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,11]<stderr>:I0502 14:33:51.723058 140505098106688 estimator.py:1148] Calling model_fn.
+[1,11]<stderr>:INFO:tensorflow:*** Features ***
+[1,9]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,9]<stderr>:I0502 14:33:51.723038 139798321772352 estimator.py:1148] Calling model_fn.
+[1,9]<stderr>:INFO:tensorflow:*** Features ***
+[1,9]<stderr>:I0502 14:33:51.723167 139798321772352 run_pretraining.py:257] *** Features ***
+[1,12]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,12]<stderr>:I0502 14:33:51.723074 140549858789184 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,12]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,12]<stderr>:I0502 14:33:51.723134 140549858789184 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,12]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,12]<stderr>:I0502 14:33:51.723183 140549858789184 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,11]<stderr>:I0502 14:33:51.723176 140505098106688 run_pretraining.py:257] *** Features ***
+[1,11]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,11]<stderr>:I0502 14:33:51.723252 140505098106688 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,12]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,12]<stderr>:I0502 14:33:51.723232 140549858789184 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,9]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,9]<stderr>:I0502 14:33:51.723240 139798321772352 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,9]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,12]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,12]<stderr>:I0502 14:33:51.723278 140549858789184 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,9]<stderr>:I0502 14:33:51.723297 139798321772352 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,11]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,11]<stderr>:I0502 14:33:51.723309 140505098106688 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,12]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,12]<stderr>:I0502 14:33:51.723324 140549858789184 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,9]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,9]<stderr>:I0502 14:33:51.723349 139798321772352 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,11]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,11]<stderr>:I0502 14:33:51.723363 140505098106688 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,9]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,9]<stderr>:I0502 14:33:51.723399 139798321772352 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,10]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,10]<stderr>:
+[1,11]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,11]<stderr>:I0502 14:33:51.723414 140505098106688 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,9]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,9]<stderr>:I0502 14:33:51.723447 139798321772352 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,10]<stderr>:W0502 14:33:51.723387 139846618654528 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,10]<stderr>:
+[1,11]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,11]<stderr>:I0502 14:33:51.723465 140505098106688 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,9]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,9]<stderr>:I0502 14:33:51.723494 139798321772352 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,12]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,12]<stderr>:
+[1,12]<stderr>:W0502 14:33:51.723479 140549858789184 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,12]<stderr>:
+[1,11]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,11]<stderr>:I0502 14:33:51.723528 140505098106688 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,9]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,9]<stderr>:I0502 14:33:51.723556 139798321772352 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,11]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,11]<stderr>:I0502 14:33:51.723581 140505098106688 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,9]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,9]<stderr>:
+[1,9]<stderr>:W0502 14:33:51.723703 139798321772352 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,9]<stderr>:
+[1,11]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,11]<stderr>:
+[1,11]<stderr>:W0502 14:33:51.723733 140505098106688 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,11]<stderr>:
+[1,14]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,14]<stderr>:
+[1,14]<stderr>:W0502 14:33:51.723846 140291224258368 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,14]<stderr>:
+[1,15]<stderr>:INFO:tensorflow:Calling model_fn.
+[1,15]<stderr>:I0502 14:33:51.724065 139648345073472 estimator.py:1148] Calling model_fn.
+[1,15]<stderr>:INFO:tensorflow:*** Features ***
+[1,15]<stderr>:I0502 14:33:51.724211 139648345073472 run_pretraining.py:257] *** Features ***
+[1,15]<stderr>:INFO:tensorflow:  name = input_ids, shape = (64, 128)
+[1,15]<stderr>:I0502 14:33:51.724290 139648345073472 run_pretraining.py:259]   name = input_ids, shape = (64, 128)
+[1,15]<stderr>:INFO:tensorflow:  name = input_mask, shape = (64, 128)
+[1,12]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,12]<stderr>:
+[1,15]<stderr>:I0502 14:33:51.724348 139648345073472 run_pretraining.py:259]   name = input_mask, shape = (64, 128)
+[1,12]<stderr>:W0502 14:33:51.724323 140549858789184 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,12]<stderr>:
+[1,15]<stderr>:INFO:tensorflow:  name = masked_lm_ids, shape = (64, 20)
+[1,15]<stderr>:I0502 14:33:51.724401 139648345073472 run_pretraining.py:259]   name = masked_lm_ids, shape = (64, 20)
+[1,15]<stderr>:INFO:tensorflow:  name = masked_lm_positions, shape = (64, 20)
+[1,15]<stderr>:I0502 14:33:51.724451 139648345073472 run_pretraining.py:259]   name = masked_lm_positions, shape = (64, 20)
+[1,15]<stderr>:INFO:tensorflow:  name = masked_lm_weights, shape = (64, 20)
+[1,15]<stderr>:I0502 14:33:51.724499 139648345073472 run_pretraining.py:259]   name = masked_lm_weights, shape = (64, 20)
+[1,15]<stderr>:INFO:tensorflow:  name = next_sentence_labels, shape = (64, 1)
+[1,9]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,9]<stderr>:
+[1,15]<stderr>:I0502 14:33:51.724547 139648345073472 run_pretraining.py:259]   name = next_sentence_labels, shape = (64, 1)
+[1,9]<stderr>:W0502 14:33:51.724530 139798321772352 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,9]<stderr>:
+[1,15]<stderr>:INFO:tensorflow:  name = segment_ids, shape = (64, 128)
+[1,15]<stderr>:I0502 14:33:51.724595 139648345073472 run_pretraining.py:259]   name = segment_ids, shape = (64, 128)
+[1,11]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,11]<stderr>:
+[1,11]<stderr>:W0502 14:33:51.724598 140505098106688 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,11]<stderr>:
+[1,15]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,15]<stderr>:
+[1,15]<stderr>:W0502 14:33:51.724750 139648345073472 module_wrapper.py:139] From /workspace/bert/modeling.py:176: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+[1,15]<stderr>:
+[1,15]<stderr>:WARNING:tensorflow:From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,15]<stderr>:
+[1,15]<stderr>:W0502 14:33:51.725607 139648345073472 module_wrapper.py:139] From /workspace/bert/modeling.py:427: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+[1,15]<stderr>:
+[1,0]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,0]<stderr>:
+[1,0]<stderr>:W0502 14:33:54.098544 140505056196416 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,0]<stderr>:
+[1,0]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,0]<stdout>:Initializing LAMB Optimizer
+[1,1]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,1]<stderr>:
+[1,1]<stderr>:W0502 14:33:54.117772 140206463244096 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,1]<stderr>:
+[1,1]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,1]<stdout>:Initializing LAMB Optimizer
+[1,7]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,7]<stderr>:
+[1,7]<stderr>:W0502 14:33:54.134863 140038783526720 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,7]<stderr>:
+[1,7]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,7]<stdout>:Initializing LAMB Optimizer
+[1,5]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,5]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,5]<stderr>:
+[1,5]<stderr>:W0502 14:33:54.145288 139961627993920 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,5]<stderr>:
+[1,3]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,3]<stderr>:
+[1,3]<stderr>:W0502 14:33:54.145661 139906241115968 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,3]<stderr>:
+[1,3]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,2]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,2]<stderr>:
+[1,2]<stderr>:W0502 14:33:54.153531 140077790168896 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,2]<stderr>:
+[1,5]<stdout>:Initializing LAMB Optimizer
+[1,2]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,3]<stdout>:Initializing LAMB Optimizer
+[1,4]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,4]<stderr>:
+[1,4]<stderr>:W0502 14:33:54.160428 140295201777472 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,4]<stderr>:
+[1,4]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,2]<stdout>:Initializing LAMB Optimizer
+[1,4]<stdout>:Initializing LAMB Optimizer
+[1,6]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,6]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,6]<stderr>:
+[1,6]<stderr>:W0502 14:33:54.258001 139986368423744 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,6]<stderr>:
+[1,6]<stdout>:Initializing LAMB Optimizer
+[1,8]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,8]<stderr>:
+[1,8]<stderr>:W0502 14:33:54.341960 139928452187968 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,8]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,8]<stderr>:
+[1,8]<stdout>:Initializing LAMB Optimizer
+[1,13]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,13]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,13]<stderr>:
+[1,13]<stderr>:W0502 14:33:54.353885 139991619028800 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,13]<stderr>:
+[1,13]<stdout>:Initializing LAMB Optimizer
+[1,10]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,10]<stderr>:
+[1,10]<stderr>:W0502 14:33:54.404020 139846618654528 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,10]<stderr>:
+[1,10]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,14]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,14]<stderr>:
+[1,14]<stderr>:W0502 14:33:54.404590 140291224258368 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,14]<stderr>:
+[1,14]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,12]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,12]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,12]<stderr>:
+[1,12]<stderr>:W0502 14:33:54.410680 140549858789184 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,12]<stderr>:
+[1,10]<stdout>:Initializing LAMB Optimizer
+[1,14]<stdout>:Initializing LAMB Optimizer
+[1,12]<stdout>:Initializing LAMB Optimizer
+[1,15]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,15]<stderr>:
+[1,15]<stderr>:W0502 14:33:54.428359 139648345073472 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,15]<stderr>:
+[1,15]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,15]<stdout>:Initializing LAMB Optimizer
+[1,9]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,9]<stderr>:
+[1,9]<stderr>:W0502 14:33:54.438787 139798321772352 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,9]<stderr>:
+[1,9]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,9]<stdout>:Initializing LAMB Optimizer
+[1,11]<stderr>:WARNING:tensorflow:From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,11]<stderr>:
+[1,11]<stderr>:W0502 14:33:54.569365 140505098106688 module_wrapper.py:139] From /workspace/bert/run_pretraining.py:295: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+[1,11]<stderr>:
+[1,11]<stdout>:decayed_learning_rate_at_crossover_point = 7.500000e-04, adjusted_init_lr = 7.500000e-04
+[1,11]<stdout>:Initializing LAMB Optimizer
+[1,0]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,0]<stderr>:
+[1,0]<stderr>:W0502 14:33:58.400150 140505056196416 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,0]<stderr>:
+[1,1]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,1]<stderr>:
+[1,1]<stderr>:W0502 14:33:58.458265 140206463244096 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,1]<stderr>:
+[1,7]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,7]<stderr>:
+[1,7]<stderr>:W0502 14:33:58.502149 140038783526720 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,7]<stderr>:
+[1,3]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,3]<stderr>:
+[1,3]<stderr>:W0502 14:33:58.520899 139906241115968 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,3]<stderr>:
+[1,2]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,2]<stderr>:
+[1,2]<stderr>:W0502 14:33:58.541532 140077790168896 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,2]<stderr>:
+[1,5]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,5]<stderr>:
+[1,5]<stderr>:W0502 14:33:58.544901 139961627993920 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,5]<stderr>:
+[1,4]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,4]<stderr>:
+[1,4]<stderr>:W0502 14:33:58.571676 140295201777472 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,4]<stderr>:
+[1,8]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,8]<stderr>:
+[1,8]<stderr>:W0502 14:33:58.636511 139928452187968 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,8]<stderr>:
+[1,6]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,6]<stderr>:
+[1,6]<stderr>:W0502 14:33:58.639135 139986368423744 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,6]<stderr>:
+[1,13]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,13]<stderr>:
+[1,13]<stderr>:W0502 14:33:58.662373 139991619028800 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,13]<stderr>:
+[1,0]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,0]<stderr>:
+[1,0]<stderr>:W0502 14:33:58.741813 140505056196416 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,0]<stderr>:
+[1,10]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,10]<stderr>:
+[1,10]<stderr>:W0502 14:33:58.794168 139846618654528 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,10]<stderr>:
+[1,14]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,14]<stderr>:
+[1,14]<stderr>:W0502 14:33:58.800105 140291224258368 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,14]<stderr>:
+[1,1]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,1]<stderr>:
+[1,1]<stderr>:W0502 14:33:58.802826 140206463244096 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,1]<stderr>:
+[1,12]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,12]<stderr>:
+[1,12]<stderr>:W0502 14:33:58.826961 140549858789184 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,12]<stderr>:
+[1,7]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,7]<stderr>:
+[1,7]<stderr>:W0502 14:33:58.848411 140038783526720 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,7]<stderr>:
+[1,15]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,15]<stderr>:
+[1,15]<stderr>:W0502 14:33:58.867264 139648345073472 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,15]<stderr>:
+[1,3]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,3]<stderr>:
+[1,3]<stderr>:W0502 14:33:58.867917 139906241115968 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,3]<stderr>:
+[1,9]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,9]<stderr>:
+[1,9]<stderr>:W0502 14:33:58.889954 139798321772352 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,9]<stderr>:
+[1,2]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,2]<stderr>:
+[1,2]<stderr>:W0502 14:33:58.889893 140077790168896 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,2]<stderr>:
+[1,5]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,5]<stderr>:
+[1,5]<stderr>:W0502 14:33:58.891965 139961627993920 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,5]<stderr>:
+[1,4]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,4]<stderr>:
+[1,4]<stderr>:W0502 14:33:58.922151 140295201777472 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,4]<stderr>:
+[1,8]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,8]<stderr>:
+[1,8]<stderr>:W0502 14:33:58.977926 139928452187968 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,8]<stderr>:
+[1,6]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,6]<stderr>:
+[1,6]<stderr>:W0502 14:33:58.988824 139986368423744 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,6]<stderr>:
+[1,13]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,13]<stderr>:
+[1,13]<stderr>:W0502 14:33:59.006967 139991619028800 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,13]<stderr>:
+[1,10]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,10]<stderr>:
+[1,10]<stderr>:W0502 14:33:59.146873 139846618654528 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,10]<stderr>:
+[1,14]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,14]<stderr>:
+[1,14]<stderr>:W0502 14:33:59.149939 140291224258368 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,14]<stderr>:
+[1,12]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,12]<stderr>:
+[1,12]<stderr>:W0502 14:33:59.172384 140549858789184 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,12]<stderr>:
+[1,15]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,15]<stderr>:
+[1,15]<stderr>:W0502 14:33:59.219068 139648345073472 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,15]<stderr>:
+[1,11]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,11]<stderr>:
+[1,11]<stderr>:W0502 14:33:59.228019 140505098106688 module_wrapper.py:139] From /workspace/bert/optimization.py:130: The name tf.is_finite is deprecated. Please use tf.math.is_finite instead.
+[1,11]<stderr>:
+[1,9]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,9]<stderr>:
+[1,9]<stderr>:W0502 14:33:59.238013 139798321772352 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,9]<stderr>:
+[1,11]<stderr>:WARNING:tensorflow:From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,11]<stderr>:
+[1,11]<stderr>:W0502 14:33:59.602952 140505098106688 module_wrapper.py:139] From /workspace/bert/optimization.py:142: The name tf.global_norm is deprecated. Please use tf.linalg.global_norm instead.
+[1,11]<stderr>:
+[1,0]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,0]<stderr>:I0502 14:34:13.105450 140505056196416 estimator.py:1150] Done calling model_fn.
+[1,0]<stderr>:INFO:tensorflow:Create CheckpointSaverHook.
+[1,0]<stderr>:I0502 14:34:13.106344 140505056196416 basic_session_run_hooks.py:541] Create CheckpointSaverHook.
+[1,1]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,1]<stderr>:I0502 14:34:13.295866 140206463244096 estimator.py:1150] Done calling model_fn.
+[1,8]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,8]<stderr>:I0502 14:34:13.363618 139928452187968 estimator.py:1150] Done calling model_fn.
+[1,7]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,7]<stderr>:I0502 14:34:13.451286 140038783526720 estimator.py:1150] Done calling model_fn.
+[1,13]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,13]<stderr>:I0502 14:34:13.454819 139991619028800 estimator.py:1150] Done calling model_fn.
+[1,3]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,3]<stderr>:I0502 14:34:13.519285 139906241115968 estimator.py:1150] Done calling model_fn.
+[1,5]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,5]<stderr>:I0502 14:34:13.563066 139961627993920 estimator.py:1150] Done calling model_fn.
+[1,2]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,2]<stderr>:I0502 14:34:13.569268 140077790168896 estimator.py:1150] Done calling model_fn.
+[1,4]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,4]<stderr>:I0502 14:34:13.590930 140295201777472 estimator.py:1150] Done calling model_fn.
+[1,6]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,6]<stderr>:I0502 14:34:13.688812 139986368423744 estimator.py:1150] Done calling model_fn.
+[1,12]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,12]<stderr>:I0502 14:34:13.840585 140549858789184 estimator.py:1150] Done calling model_fn.
+[1,14]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,14]<stderr>:I0502 14:34:13.878961 140291224258368 estimator.py:1150] Done calling model_fn.
+[1,10]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,10]<stderr>:I0502 14:34:13.897242 139846618654528 estimator.py:1150] Done calling model_fn.
+[1,9]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,9]<stderr>:I0502 14:34:14.020082 139798321772352 estimator.py:1150] Done calling model_fn.
+[1,15]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,15]<stderr>:I0502 14:34:14.038711 139648345073472 estimator.py:1150] Done calling model_fn.
+[1,11]<stderr>:INFO:tensorflow:Done calling model_fn.
+[1,11]<stderr>:I0502 14:34:15.240019 140505098106688 estimator.py:1150] Done calling model_fn.
+[1,0]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,0]<stderr>:I0502 14:34:20.975112 140505056196416 monitored_session.py:240] Graph was finalized.
+[1,0]<stderr>:2021-05-02 14:34:21.000685: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,0]<stderr>:2021-05-02 14:34:21.005703: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4a3c4f0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,0]<stderr>:2021-05-02 14:34:21.005757: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,0]<stderr>:2021-05-02 14:34:21.008304: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,1]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,1]<stderr>:I0502 14:34:21.168933 140206463244096 monitored_session.py:240] Graph was finalized.
+[1,1]<stderr>:2021-05-02 14:34:21.180601: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,1]<stderr>:2021-05-02 14:34:21.186037: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4d82730 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,1]<stderr>:2021-05-02 14:34:21.186059: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,1]<stderr>:2021-05-02 14:34:21.188771: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,8]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,8]<stderr>:I0502 14:34:21.284749 139928452187968 monitored_session.py:240] Graph was finalized.
+[1,8]<stderr>:2021-05-02 14:34:21.314080: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,8]<stderr>:2021-05-02 14:34:21.319362: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x67db130 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,8]<stderr>:2021-05-02 14:34:21.319428: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,8]<stderr>:2021-05-02 14:34:21.321913: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,13]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,13]<stderr>:I0502 14:34:21.359012 139991619028800 monitored_session.py:240] Graph was finalized.
+[1,13]<stderr>:2021-05-02 14:34:21.368853: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,13]<stderr>:2021-05-02 14:34:21.373231: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5ce0aa0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,13]<stderr>:2021-05-02 14:34:21.373256: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,13]<stderr>:2021-05-02 14:34:21.375693: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,10]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,10]<stderr>:I0502 14:34:21.788241 139846618654528 monitored_session.py:240] Graph was finalized.
+[1,10]<stderr>:2021-05-02 14:34:21.799917: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,10]<stderr>:2021-05-02 14:34:21.806422: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x2a66b6f0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,10]<stderr>:2021-05-02 14:34:21.806443: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,10]<stderr>:2021-05-02 14:34:21.809060: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,4]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,4]<stderr>:I0502 14:34:21.822955 140295201777472 monitored_session.py:240] Graph was finalized.
+[1,7]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,7]<stderr>:I0502 14:34:21.827153 140038783526720 monitored_session.py:240] Graph was finalized.
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[1,12]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,12]<stderr>:I0502 14:34:21.877528 140549858789184 monitored_session.py:240] Graph was finalized.
+[1,12]<stderr>:2021-05-02 14:34:22.273706: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,12]<stderr>:2021-05-02 14:34:22.276678: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0xc2b5400 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,12]<stderr>:2021-05-02 14:34:22.276705: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,12]<stderr>:2021-05-02 14:34:22.279044: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,14]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,14]<stderr>:I0502 14:34:22.297522 140291224258368 monitored_session.py:240] Graph was finalized.
+[1,2]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,2]<stderr>:I0502 14:34:21.976073 140077790168896 monitored_session.py:240] Graph was finalized.
+[1,2]<stderr>:2021-05-02 14:34:21.984567: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,2]<stderr>:2021-05-02 14:34:21.987545: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4e1b390 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,2]<stderr>:2021-05-02 14:34:21.987563: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,2]<stderr>:2021-05-02 14:34:21.989567: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,7]<stderr>:2021-05-02 14:34:21.834833: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,7]<stderr>:2021-05-02 14:34:21.837650: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5937270 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,7]<stderr>:2021-05-02 14:34:21.837672: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,7]<stderr>:2021-05-02 14:34:21.839706: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,6]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,6]<stderr>:I0502 14:34:22.047586 139986368423744 monitored_session.py:240] Graph was finalized.
+[1,6]<stderr>:2021-05-02 14:34:22.056530: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,6]<stderr>:2021-05-02 14:34:22.059359: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1e5bdc00 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,6]<stderr>:2021-05-02 14:34:22.059379: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,6]<stderr>:2021-05-02 14:34:22.061381: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,5]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,5]<stderr>:I0502 14:34:21.922549 139961627993920 monitored_session.py:240] Graph was finalized.
+[1,5]<stderr>:2021-05-02 14:34:21.932491: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,5]<stderr>:2021-05-02 14:34:21.935472: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x643af60 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,5]<stderr>:2021-05-02 14:34:21.935492: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,5]<stderr>:2021-05-02 14:34:21.937588: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,4]<stderr>:2021-05-02 14:34:21.832437: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,4]<stderr>:2021-05-02 14:34:21.835287: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1dba18e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,4]<stderr>:2021-05-02 14:34:21.835310: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,4]<stderr>:2021-05-02 14:34:21.837340: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+[1,4]<stderr>:2021-05-02 14:34:22.816441: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0xa7a9910 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+[1,4]<stderr>:2021-05-02 14:34:22.816476: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): A100-SXM4-40GB, Compute Capability 8.0
+[1,4]<stderr>:2021-05-02 14:34:22.827252: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+[1,4]<stderr>:name: A100-SXM4-40GB major: 8 minor: 0 memoryClockRate(GHz): 1.41
+[1,4]<stderr>:pciBusID: 0000:90:1c.0
+[1,4]<stderr>:2021-05-02 14:34:22.827284: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,4]<stderr>:2021-05-02 14:34:22.829457: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.11
+[1,4]<stderr>:2021-05-02 14:34:22.830544: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+[1,4]<stderr>:2021-05-02 14:34:22.831016: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+[1,4]<stderr>:2021-05-02 14:34:22.833686: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+[1,4]<stderr>:2021-05-02 14:34:22.834342: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.11
+[1,4]<stderr>:2021-05-02 14:34:22.834524: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.8
+[1,0]<stderr>:2021-05-02 14:34:21.997739: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1f8fc460 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+[1,0]<stderr>:2021-05-02 14:34:21.997769: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): A100-SXM4-40GB, Compute Capability 8.0
+[1,0]<stderr>:2021-05-02 14:34:22.006035: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+[1,0]<stderr>:name: A100-SXM4-40GB major: 8 minor: 0 memoryClockRate(GHz): 1.41
+[1,0]<stderr>:pciBusID: 0000:10:1c.0
+[1,0]<stderr>:2021-05-02 14:34:22.006068: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,0]<stderr>:2021-05-02 14:34:22.008363: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.11
+[1,0]<stderr>:2021-05-02 14:34:22.009357: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+[1,0]<stderr>:2021-05-02 14:34:22.009671: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+[1,0]<stderr>:2021-05-02 14:34:22.011485: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+[1,0]<stderr>:2021-05-02 14:34:22.011964: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.11
+[1,0]<stderr>:2021-05-02 14:34:22.012161: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.8
+[1,0]<stderr>:2021-05-02 14:34:22.027858: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+[1,0]<stderr>:2021-05-02 14:34:22.027898: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.11.0
+[1,0]<stderr>:2021-05-02 14:34:22.666458: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+[1,0]<stderr>:2021-05-02 14:34:22.666496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+[1,0]<stderr>:2021-05-02 14:34:22.666572: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+[1,0]<stderr>:2021-05-02 14:34:22.689984: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 37607 MB memory) -> physical GPU (device: 0, name: A100-SXM4-40GB, pci bus id: 0000:10:1c.0, compute capability: 8.0)
+[1,3]<stderr>:INFO:tensorflow:Graph was finalized.
+[1,3]<stderr>:I0502 14:34:21.850612 139906241115968 monitored_session.py:240] Graph was finalized.
+[1,3]<stderr>:2021-05-02 14:34:21.860454: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2999995000 Hz
+[1,3]<stderr>:2021-05-02 14:34:21.863262: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1fcc67c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+[1,3]<stderr>:2021-05-02 14:34:21.863282: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+[1,3]<stderr>:2021-05-02 14:34:21.865304: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 5263 on node bert-large-pretraining-efa-worker-0 exited on signal 9 (Killed).
+--------------------------------------------------------------------------

@@ -33,7 +33,7 @@ spec:
             - --allow-run-as-root
             - --tag-output
             - -np
-            - "16"
+            - "32"
             - -bind-to
             - none
             - -map-by
@@ -88,7 +88,7 @@ spec:
               mountPath: /fsx
 
     Worker:
-      replicas: 2
+      replicas: 4
       template:
         spec:
           imagePullPolicy: Always
@@ -103,13 +103,10 @@ spec:
               limits:
                 nvidia.com/gpu: 8
                 hugepages-2Mi: 5120Mi
-                memory: 8000Mi
+                memory: 384000Mi
                 vpc.amazonaws.com/efa: 4
               requests:
-                nvidia.com/gpu: 8
-                hugepages-2Mi: 5120Mi   
-                memory: 8000Mi
-                vpc.amazonaws.com/efa: 4
+                memory: 384000Mi
             volumeMounts:
             - name:  fsx
               mountPath: /fsx
