@@ -10,10 +10,10 @@ spec:
       replicas: 1
       template:
          spec:
-          imagePullPolicy: IfNotPresent
           restartPolicy: OnFailure
           containers:
           - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:base-cudnn8-cuda11-ubuntu18.04
+            imagePullPolicy: Always
             name: nccl-test-launcher
             env:
              - name: LD_LIBRARY_PATH
@@ -74,9 +74,9 @@ spec:
       replicas: 2
       template:
         spec:
-          imagePullPolicy: IfNotPresent
           containers:
           - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:base-cudnn8-cuda11-ubuntu18.04
+            imagePullPolicy: Always
             name: nccl-worker
             resources:
               limits:

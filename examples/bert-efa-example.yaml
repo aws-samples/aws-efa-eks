@@ -10,7 +10,6 @@ spec:
       replicas: 1
       template:
          spec:
-          imagePullPolicy: Always
           restartPolicy: OnFailure
           volumes:
           - name:  fsx
@@ -18,6 +17,7 @@ spec:
               claimName: fsx-claim
           containers:
           - image: 231748552833.dkr.ecr.us-east-1.amazonaws.com/bert-efa-hvd-tf1-py3:latest
+            imagePullPolicy: Always
             name: bert-training-launcher
             env:
              - name: LD_LIBRARY_PATH
@@ -91,13 +91,13 @@ spec:
       replicas: 4
       template:
         spec:
-          imagePullPolicy: Always
           volumes:
           - name:  fsx
             persistentVolumeClaim:
               claimName: fsx-claim
           containers:
           - image: 231748552833.dkr.ecr.us-east-1.amazonaws.com/bert-efa-hvd-tf1-py3:latest
+            imagePullPolicy: Always
             name: bert-worker
             resources:
               limits:
