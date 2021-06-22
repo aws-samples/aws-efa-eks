@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iperf3-server
+spec:
+  hostNetwork: true
+  nodeSelector:
+    kubernetes.io/hostname: ip-10-0-25-175.us-west-2.compute.internal
+  containers:
+  - name: app
+    image: ubuntu:latest
+    command: ["/bin/bash"]
+    args: ["-c", "apt update && \
+                  apt install iproute2 iperf3 -y && \
+                  ip r && for a in {10.0.6.33,10.0.52.185,10.0.25.175,10.0.51.91}; do for i in {5024..5043}; do echo $a:$i; iperf3 -s -p $i -B $a -V > /tmp/output.$a-$i.log & done; done && sleep 3600"]
+    resources:
+      limits:
+        vpc.amazonaws.com/efa: 4
+      requests:
+        vpc.amazonaws.com/efa: 4
