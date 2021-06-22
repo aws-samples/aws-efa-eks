@@ -62,7 +62,7 @@ ip-172-31-89-239.us-west-2.compute.internal   Ready    <none>   65m   v1.19.6-ek
 In order to present the underlying pod(s) with the EFA RDMA devices we are providing a device plugin you can install 
 TODO: Provide a permament home EFA EKS plugin
 ```
-kubectl apply -f manifest/efa-k8s-device-plugin.yml
+kubectl apply -f https://raw.githubusercontent.com/aws-samples/aws-efa-eks/main/manifest/efa-k8s-device-plugin.yml
 ```
 Next apply the [NVIDIA device plugin](https://github.com/NVIDIA/k8s-device-plugin) DaemonSet to present the pods with the underyling GPU devices.
 ```
