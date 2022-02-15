@@ -18,7 +18,7 @@ This document will introduce the user to create an EKS cluster with `p4d.24xlarg
 
 ## Step 1: Create EKS cluster
 
-Create an empty EKS cluster via `eksctl`, at the moment, `eksctl` doesnt have support to create EFA supported nodegroup. In the later steps, the nodegroup would be created then join the EKS cluster.
+Create an empty EKS cluster via `eksctl`. In the later steps, the nodegroup would be created then join the EKS cluster.
 
 ```
 eksctl create cluster --region us-east-1 --without-nodegroup --vpc-public-subnets ${subnets} 
