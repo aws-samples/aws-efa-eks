@@ -1,93 +1,81 @@
 apiVersion: kubeflow.org/v1alpha2
 kind: MPIJob
 metadata:
-  name: nccl-tests-efa-16
+  name: pytorch-ddp-efa
 spec:
-  slotsPerWorker: 8
+  slotsPerWorker: 1
   cleanPodPolicy: Running
   mpiReplicaSpecs:
     Launcher:
       replicas: 1
       template:
          spec:
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           restartPolicy: OnFailure
           containers:
-          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:20.10-pt-py3-sagemaker
-            name: nccl-test-launcher
+          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:megatron-cu11.1
+            name: megatron-training-launcher
             env:
+             - name: GPUS_PER_NODE
+               value: "8"
+             - name: MASTER_ADDR
+               value: pytorch-ddp-efa-worker-0
+             - name: MASTER_PORT
+               value: "6002"
+             - name: NNODES
+               value: $OMPI_MCA_orte_num_nodes
+             - name: NODE_RANK
+               value: $OMPI_COMM_WORLD_NODE_RANK
+             - name: WORLD_SIZE
+               value: $OMPI_COMM_WORLD_SIZE
              - name: LD_LIBRARY_PATH
                value: /opt/amazon/openmpi/lib:/opt/nccl/build/lib:/opt/amazon/efa/lib:/opt/aws-ofi-nccl/install/lib:/usr/local/nvidia/lib:$LD_LIBRARY_PATH
              - name: PATH
-               value: $PATH:/opt/amazon/efa/bin
+               value: $PATH:/opt/amazon/efa/bin:/usr/local/bin:/usr/bin:/opt/conda/bin
              - name: XLA_FLAGS
                value: "--xla_gpu_cuda_data_dir=/usr/local/cuda"
              - name: TF_XLA_FLAGS
                value: "--tf_xla_cpu_global_jit"
+             - name: DISTRIBUTED_ARGS
+               value: "--nproc_per_node $GPUS_PER_NODE --nnodes $NNODES --node_rank $NODE_RANK --master_addr $MASTER_ADDR --master_port $MASTER_PORT"
+    
             command:
             - /opt/amazon/openmpi/bin/mpirun
             - --allow-run-as-root
             - --tag-output
             - -np
-            - "16"
+            - "2"
             - -bind-to
             - none
             - -map-by
             - slot
-            - -x
+            - -x 
             - PATH
-            - -x
+            - -x 
             - LD_LIBRARY_PATH
             - -x
-            - XLA_FLAGS
+            - MASTER_ADDR
             - -x
-            - TF_XLA_FLAGS
-            - -x
-            - NCCL_DEBUG=INFO
-            - -x
-            - NCCL_ALGO=RING
-            - -x
-            - FI_EFA_USE_DEVICE_RDMA=1
-            - -x
-            - RDMAV_FORK_SAFE=1
-            - -x
-            - NCCL_PROTO=simple
+            - MASTER_PORT
             - --mca
             - pml
             - ^cm
-            - --oversubscribe
-            - /workspace/nccl-tests/build/all_reduce_perf
-            - -b
-            - "8"
-            - -e
-            - 2G
-            - -f
-            - "2"
-            - -t
-            - "1"
-            - -g
-            - "1"
-            - -c
-            - "1"
-            - -n
-            - "100"
+            - /tmp/torch_ddp_efa.sh
 
     Worker:
       replicas: 2
       template:
         spec:
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           containers:
-          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:20.10-pt-py3-sagemaker
-            name: nccl-worker
+          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:megatron-cu11.1
+            name: pytorch-efa-worker
             resources:
               limits:
                 nvidia.com/gpu: 8
                 hugepages-2Mi: 5120Mi
+                memory: 384000Mi
                 vpc.amazonaws.com/efa: 4
-                memory: 8000Mi
               requests:
-                nvidia.com/gpu: 8
-                hugepages-2Mi: 5120Mi
-                vpc.amazonaws.com/efa: 4
-                memory: 8000Mi
+                memory: 384000Mi
+
