@@ -91,12 +91,12 @@ resources:
               limits:
                 nvidia.com/gpu: 8
                 hugepages-2Mi: 5120Mi
-                **vpc.amazonaws.com/efa: 4**
+                vpc.amazonaws.com/efa: 4
                 memory: 8000Mi
               requests:
                 nvidia.com/gpu: 8
                 hugepages-2Mi: 5120Mi
-               ** vpc.amazonaws.com/efa: 4**
+                vpc.amazonaws.com/efa: 4
                 memory: 8000Mi
 ```
 
