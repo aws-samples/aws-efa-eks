@@ -18,7 +18,7 @@ This document will introduce the user to create an EKS cluster with `p4d.24xlarg
 
 ## Step 1: Create EKS cluster
 
-Create an empty EKS cluster via `eksctl`, at the moment, `eksctl` doesnt have support to create EFA supported nodegroup. In the later steps, the nodegroup would be created then join the EKS cluster.
+Create an empty EKS cluster via `eksctl`. In the later steps, the nodegroup would be created then join the EKS cluster.
 
 ```
 eksctl create cluster --region us-east-1 --without-nodegroup --vpc-public-subnets ${subnets} 
@@ -85,6 +85,20 @@ The most important modification required in a Kubernetes job for adopting EFA is
 
 The example to run 2 node NCCL Performance Test  is `examples/nccl-efa-tests.yaml`.  In the example NCCL-test job, each worker requested 8 gpus which would allow cluster to allocate two nodes in two P4d instances,  and also 256Mi hugepages-2Mi and 8000Mi.
 
+To pass EFA devices into your container so that your code can use them make a resource limit/request in your podspec
+```
+resources:
+              limits:
+                nvidia.com/gpu: 8
+                hugepages-2Mi: 5120Mi
+                vpc.amazonaws.com/efa: 4
+                memory: 8000Mi
+              requests:
+                nvidia.com/gpu: 8
+                hugepages-2Mi: 5120Mi
+                vpc.amazonaws.com/efa: 4
+                memory: 8000Mi
+```
 
 Create NCCL-tests job via command:
 ```
