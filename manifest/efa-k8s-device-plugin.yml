@@ -42,6 +42,7 @@ spec:
                       - c5n.18xlarge
                       - c5n.metal
                       - g4dn.metal
+                      - c5n.9xlarge
                       - i3en.24xlarge
                       - i3en.metal
                       - inf1.24xlarge
@@ -61,6 +62,7 @@ spec:
                     values:
                       - c5n.18xlarge
                       - c5n.metal
+                      - c5n.9xlarge
                       - g4dn.metal
                       - i3en.24xlarge
                       - i3en.metal
