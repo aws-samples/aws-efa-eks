@@ -12,6 +12,10 @@ spec:
       template:
          spec:
           restartPolicy: OnFailure
+          initContainers:
+          - image: busybox
+            name: init
+            command: ["sh", "-c", "sleep 5"]
           containers:
           - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:22.03-pt-py3
             imagePullPolicy: Always
@@ -30,7 +34,7 @@ spec:
             - --allow-run-as-root
             - --tag-output
             - -np
-            - "32"
+            - "16"
             - -bind-to
             - none
             - -map-by
@@ -77,7 +81,7 @@ spec:
             - -n
             - "100"
     Worker:
-      replicas: 4
+      replicas: 2
       template:
         spec:
           volumes:
