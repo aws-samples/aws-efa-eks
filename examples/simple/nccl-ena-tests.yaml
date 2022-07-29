@@ -19,7 +19,7 @@ spec:
              - name: LD_LIBRARY_PATH
                value: /opt/amazon/openmpi/lib:/opt/nccl/build/lib:/opt/amazon/efa/lib:/opt/aws-ofi-nccl/install/lib:/usr/local/nvidia/lib:$LD_LIBRARY_PATH
              - name: PATH
-               value: $PATH:/opt/amazon/efa/bin
+               value: $PATH:/opt/amazon/efa/bin:/usr/sbin:/usr/bin:/usr/local/bin
              - name: XLA_FLAGS
                value: "--xla_gpu_cuda_data_dir=/usr/local/cuda"
              - name: TF_XLA_FLAGS

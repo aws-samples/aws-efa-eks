@@ -1,10 +1,11 @@
-apiVersion: kubeflow.org/v1alpha2
+apiVersion: kubeflow.org/v2beta1
 kind: MPIJob
 metadata:
   name: nccl-tests-efa-16
 spec:
   slotsPerWorker: 8
-  cleanPodPolicy: Running
+  runPolicy:
+    cleanPodPolicy: Running
   mpiReplicaSpecs:
     Launcher:
       replicas: 1
@@ -12,14 +13,14 @@ spec:
          spec:
           restartPolicy: OnFailure
           containers:
-          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:base-cudnn8-cuda11-ubuntu18.04
+          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:22.03-pt-py3
             imagePullPolicy: Always
             name: nccl-test-launcher
             env:
              - name: LD_LIBRARY_PATH
                value: /opt/amazon/openmpi/lib:/opt/nccl/build/lib:/opt/amazon/efa/lib:/opt/aws-ofi-nccl/install/lib:/usr/local/nvidia/lib:$LD_LIBRARY_PATH
              - name: PATH
-               value: $PATH:/opt/amazon/efa/bin
+               value: $PATH:/opt/amazon/efa/bin:/usr/sbin:/usr/bin:/usr/local/bin
              - name: XLA_FLAGS
                value: "--xla_gpu_cuda_data_dir=/usr/local/cuda"
              - name: TF_XLA_FLAGS
@@ -29,7 +30,7 @@ spec:
             - --allow-run-as-root
             - --tag-output
             - -np
-            - "16"
+            - "32"
             - -bind-to
             - none
             - -map-by
@@ -47,16 +48,20 @@ spec:
             - -x
             - NCCL_ALGO=RING
             - -x
-            - FI_EFA_USE_DEVICE_RDMA=1
-            - -x
             - RDMAV_FORK_SAFE=1
+            - -x
+            - NCCL_PROTO=simple
+            - -x 
+            - FI_LOG_LEVEL=warn
+            - -x
+            - FI_EFA_USE_DEVICE_RDMA=1
             - -x
             - NCCL_PROTO=simple
             - --mca
             - pml
             - ^cm
             - --oversubscribe
-            - /workspace/nccl-tests/build/all_reduce_perf
+            - /opt/nccl-tests/build/all_reduce_perf
             - -b
             - "8"
             - -e
@@ -71,15 +76,23 @@ spec:
             - "1"
             - -n
             - "100"
-
     Worker:
-      replicas: 2
+      replicas: 4
       template:
         spec:
+          volumes:
+          - name: dshm
+            emptyDir:
+              medium: Memory
+          nodeSelector:
+            beta.kubernetes.io/instance-type: p4d.24xlarge
           containers:
-          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:base-cudnn8-cuda11-ubuntu18.04
+          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:22.03-pt-py3
             imagePullPolicy: Always
             name: nccl-worker
+            volumeMounts:
+            - mountPath: /dev/shm
+              name: dshm
             resources:
               limits:
                 nvidia.com/gpu: 8
