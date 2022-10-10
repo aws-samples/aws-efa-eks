@@ -1,0 +1,118 @@
+apiVersion: kubeflow.org/v2beta1
+kind: MPIJob
+metadata:
+  name: hf-bert-efa-32
+spec:
+  slotsPerWorker: 1
+  runPolicy:
+    cleanPodPolicy: Running
+  mpiReplicaSpecs:
+    Launcher:
+      replicas: 1
+      template:
+         spec:
+          restartPolicy: OnFailure
+          volumes:
+          - name:  fsx
+            persistentVolumeClaim:
+              claimName: fsx-claim
+          initContainers:
+          - image: 231748552833.dkr.ecr.us-east-1.amazonaws.com/aws/bert-pt-py3:hf-latest
+            name: init
+            command: ["sh", "-c", "sleep 5"]
+          containers:
+          - image: 231748552833.dkr.ecr.us-east-1.amazonaws.com/aws/bert-pt-py3:hf-latest
+            imagePullPolicy: Always
+            name: hf-bert-efa-pretraining
+            env:
+             - name: GPUS_PER_NODE
+               value: "8"
+             - name: MASTER_ADDR
+               value: hf-bert-efa-32-worker-0.hf-bert-efa-32-worker
+             - name: MASTER_PORT
+               value: "12345"
+             - name: NNODES
+               value: $OMPI_MCA_orte_num_nodes
+             - name: NODE_RANK
+               value: $OMPI_COMM_WORLD_RANK
+             - name: WORLD_SIZE
+               value: "16"
+             - name: LD_LIBRARY_PATH
+               value: /opt/amazon/openmpi/lib:/opt/nccl/build/lib:/opt/amazon/efa/lib:/opt/aws-ofi-nccl/install/lib:/usr/local/nvidia/lib:$LD_LIBRARY_PATH
+             - name: PATH
+               value: $PATH:/opt/amazon/efa/bin:/usr/sbin:/usr/bin:/usr/local/bin
+             - name: CODE_DIR
+               value: /workspace/bert
+             - name: INPUT_DIR
+               value: /fsx/bert-pytorch2/pretrain/phase1/unbinned/parquet
+            command:
+            - /opt/amazon/openmpi/bin/mpirun
+            - --allow-run-as-root
+            - --tag-output
+            - -np
+            - "2"
+            - -bind-to
+            - none
+            - -map-by
+            - slot
+            - -x
+            - PATH
+            - -x
+            - LD_LIBRARY_PATH
+            - -x
+            - NCCL_DEBUG=INFO
+            - -x
+            - MASTER_ADDR
+            - -x
+            - GPUS_PER_NODE
+            - -x
+            - MASTER_PORT
+            - -x
+            - NCCL_ALGO=RING
+            - -x
+            - FI_PROVIDER=efa
+            - -x
+            - FI_EFA_USE_DEVICE_RDMA=1
+            - --mca
+            - pml
+            - ^cm
+            - --oversubscribe
+            - /usr/bin/env
+            volumeMounts:
+            - name:  fsx
+              mountPath: /fsx
+    Worker:
+      replicas: 2
+      template:
+        spec:
+          volumes:
+          - name: dshm
+            emptyDir:
+              medium: Memory
+          - name:  fsx
+            persistentVolumeClaim:
+              claimName: fsx-claim
+          nodeSelector:
+            beta.kubernetes.io/instance-type: p4d.24xlarge
+          containers:
+          - image: 231748552833.dkr.ecr.us-east-1.amazonaws.com/aws/bert-pt-py3:hf-latest
+            imagePullPolicy: Always
+            name: hf-bert-worker
+            volumeMounts:
+            - mountPath: /dev/shm
+              name: dshm
+            - name:  fsx
+              mountPath: /fsx
+            resources:
+              limits:
+                cpu: 92
+                nvidia.com/gpu: 8
+                hugepages-2Mi: 5120Mi
+                vpc.amazonaws.com/efa: 4
+                memory: 180000Mi
+              requests:
+                cpu: 92
+                nvidia.com/gpu: 8
+                hugepages-2Mi: 5120Mi
+                vpc.amazonaws.com/efa: 4
+                memory: 180000Mi

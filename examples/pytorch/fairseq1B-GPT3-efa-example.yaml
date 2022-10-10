@@ -1,10 +1,11 @@
-apiVersion: kubeflow.org/v1alpha2
+apiVersion: kubeflow.org/v2beta1
 kind: MPIJob
 metadata:
   name: fairscale-1b-pretraining-efa
 spec:
   slotsPerWorker: 1
-  cleanPodPolicy: Running
+  runPolicy:
+    cleanPodPolicy: Running
   mpiReplicaSpecs:
     Launcher:
       replicas: 1
@@ -44,7 +45,7 @@ spec:
             - --allow-run-as-root
             - --tag-output
             - -np
-            - "32"
+            - "16"
             - -bind-to
             - none
             - -map-by
@@ -60,7 +61,7 @@ spec:
             - /fairdata/train.sh
 
     Worker:
-      replicas: 32
+      replicas: 2
       template:
         spec:
           imagePullPolicy: Always

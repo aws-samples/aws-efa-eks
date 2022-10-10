@@ -1,10 +1,11 @@
-apiVersion: kubeflow.org/v1alpha2
+apiVersion: kubeflow.org/v2beta1
 kind: MPIJob
 metadata:
   name: megatron-8b-pretraining-efa
 spec:
   slotsPerWorker: 1
-  cleanPodPolicy: Running
+  runPolicy:
+    cleanPodPolicy: Running
   mpiReplicaSpecs:
     Launcher:
       replicas: 1
@@ -17,7 +18,7 @@ spec:
             persistentVolumeClaim:
               claimName: fsx-claim
           containers:
-          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:megatron-cu11.1
+          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:megatron-cu11.6
             name: megatron-training-launcher
             env:
              - name: DATA_PATH
@@ -56,7 +57,7 @@ spec:
             - --allow-run-as-root
             - --tag-output
             - -np
-            - "4"
+            - "16"
             - -bind-to
             - none
             - -map-by
@@ -70,22 +71,26 @@ spec:
             - -x
             - MASTER_PORT
             - /fsx/gpt2-pytorch/train_8B_gpt2.sh
-
             volumeMounts:
             - name:  fsx
               mountPath: /fsx
 
     Worker:
-      replicas: 4
+      replicas: 16
       template:
         spec:
-          imagePullPolicy: Always
+          nodeSelector:
+            beta.kubernetes.io/instance-type: p4d.24xlarge
           volumes:
+          - name: dshm
+            emptyDir: 
+              medium: Memory
           - name:  fsx
             persistentVolumeClaim:
               claimName: fsx-claim
           containers:
-          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:megatron-cu11.1
+          - image: public.ecr.aws/w6p6i9i7/aws-efa-nccl-rdma:megatron-cu11.6
+            imagePullPolicy: Always
             env:
              - name: DATA_PATH
                value: /fsx/gpt2-pytorch/my-gpt2_text_document
@@ -98,12 +103,19 @@ spec:
             name: megatron-worker
             resources:
               limits:
+                cpu: 92
                 nvidia.com/gpu: 8
-                hugepages-2Mi: 5120Mi
-                memory: 384000Mi
+                hugepages-2Mi: 10120Mi
+                memory: 584000Mi
                 vpc.amazonaws.com/efa: 4
               requests:
-                memory: 384000Mi
+                cpu: 92
+                nvidia.com/gpu: 8
+                hugepages-2Mi: 10120Mi
+                memory: 584000Mi
+                vpc.amazonaws.com/efa: 4
             volumeMounts:
+            - name: dshm
+              mountPath: /dev/shm
             - name:  fsx
               mountPath: /fsx
