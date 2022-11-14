@@ -72,7 +72,7 @@ For the NCCL tests we will now apply the Kubeflow MPIOperator which will help ma
 ```
 git clone https://github.com/kubeflow/mpi-operator
 cd mpi-operator
-kubectl create -f deploy/v1alpha2/mpi-operator.yaml
+kubectl apply -f deploy/v2beta1/mpi-operator.yaml
 ```
 
 ## Step 5: Run the Multi-node NCCL Performance Test on the EKS cluster for verifying GPUDirectRDMA/EFA
