@@ -27,9 +27,9 @@ RUN apt-get update -y && \
          rdma-core \
          libtool && \
      mkdir -p /var/run/sshd && \
-     sed -I 's/[ #]\(.*StrictHostKeyChecking \).*/ \1no/g' /etc/ssh/ssh_config && \
+     sed -i 's/[ #]\(.*StrictHostKeyChecking \).*/ \1no/g' /etc/ssh/ssh_config && \
      echo "    UserKnownHostsFile /dev/null" >> /etc/ssh/ssh_config && \
-     sed -I 's/#\(StrictModes \).*/\1no/g' /etc/ssh/sshd_config
+     sed -i 's/#\(StrictModes \).*/\1no/g' /etc/ssh/sshd_config
 
 # Install Nsight-systems
 RUN wget -qO - https://developer.download.nvidia.com/devtools/repos/ubuntu2004/amd64/nvidia.pub | apt-key add - && \
