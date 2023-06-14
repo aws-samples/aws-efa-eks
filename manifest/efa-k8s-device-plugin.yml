@@ -90,6 +90,7 @@ spec:
             allowPrivilegeEscalation: false
             capabilities:
               drop: ["ALL"]
+            runAsNonRoot: false
           volumeMounts:
             - name: device-plugin
               mountPath: /var/lib/kubelet/device-plugins
