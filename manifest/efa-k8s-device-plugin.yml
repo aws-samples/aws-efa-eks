@@ -134,7 +134,7 @@ spec:
                     - x2iezn.metal
       hostNetwork: true
       containers:
-        - image: 602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/aws-efa-k8s-device-plugin:v0.4.2
+        - image: 602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/aws-efa-k8s-device-plugin:v0.4.3
           name: aws-efa-k8s-device-plugin
           securityContext:
             allowPrivilegeEscalation: false
