@@ -144,7 +144,7 @@ spec:
                     - hpc7g.16xlarge
       hostNetwork: true
       containers:
-        - image: 602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/aws-efa-k8s-device-plugin:v0.5.0
+        - image: 602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/aws-efa-k8s-device-plugin:v0.5.1
           name: aws-efa-k8s-device-plugin
           securityContext:
             allowPrivilegeEscalation: false
